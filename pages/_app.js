@@ -12,7 +12,7 @@ function CustomApp({ Component, pageProps }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>story.codes</title>
+        <title>kram.codes</title>
 
         <meta name="description" content="" />
         <meta name="author" content="Evan Krambuhl" />
