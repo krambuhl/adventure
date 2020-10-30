@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family);
+  font-style: var(--font-style);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--font-height);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+a {
+  text-decoration: underline;
+  color: var(--color-action);
+
+  &:focus {
+    outline-offset: 4px;
+    outline: var(--color-action) solid 2px;
+  }
+}

@@ -1,0 +1,4 @@
+.root {
+  font-weight: var(--weight-bold);
+  padding-left: var(--space-tab);
+}

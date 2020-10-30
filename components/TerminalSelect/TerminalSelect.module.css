@@ -1,0 +1,78 @@
+@keyframes blink {
+  to { visibility: hidden; }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.root {}
+
+.caption {
+  margin-left: var(--space-tab);
+  color: var(--color-passive);
+}
+
+.option {
+  position: relative;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+
+  &::before {
+    content: '>';
+    color: var(--color-light);
+    display: inline-block;
+    opacity: 0;
+    margin-right: 1ch;
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--color-yellow);
+    outline: none;
+
+    &::before {
+      color: var(--color-yellow);
+      opacity: 1;
+      animation: blink 1.5s steps(3, start) infinite;
+    }
+
+    .text {
+      text-decoration: underline;
+    }
+
+    .label {
+      color: var(--color-mid);
+    }
+  }
+}
+
+.label {
+  margin-left: 1ch;
+  color: var(--color-mid-dark);
+}
+
+.isActive {
+  .link::before {
+    opacity: 1;
+    animation: none;
+  }
+
+  .label {
+    color: var(--color-mid);
+  }
+}
+
+.isActive.isLoading {
+  .link::before {
+    content: '*';
+    opacity: 1;
+    animation: rotate 1s linear infinite;
+  }
+}

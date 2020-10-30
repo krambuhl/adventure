@@ -1,0 +1,25 @@
+.root { }
+.lead { }
+
+.symbol {
+  .passive &::before {
+    content: '■';
+    font-size: 1.6em;
+    line-height: 0.7em;
+  }
+
+  .action &::before {
+    content: '●';
+    font-size: 1.75em;
+    line-height: 0.6em;
+    color: var(--color-action);
+  }
+}
+
+.caption {
+  text-transform: uppercase;
+}
+
+.content {
+  font-weight: var(--weight-bold);
+}

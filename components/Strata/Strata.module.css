@@ -1,0 +1,17 @@
+.root {
+  display: flex;
+}
+
+.container {
+  padding: var(--padding);
+  max-width: var(--max-width);
+  margin: auto;
+  width: 100%;
+}
+
+.widthPage { --max-width: 100%; }
+.widthContent { --max-width: var(--width-xl); }
+.widthText { --max-width: var(--width-md); }
+
+.paddingNone { --padding: none; }
+.paddingNormal { --padding: var(--space-md); }

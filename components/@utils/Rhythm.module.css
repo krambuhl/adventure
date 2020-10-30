@@ -1,0 +1,5 @@
+.xs > * + * { margin-top: rfs(0.2rem); }
+.sm > * + * { margin-top: rfs(0.6rem); }
+.md > * + * { margin-top: rfs(1.1rem); }
+.lg > * + * { margin-top: rfs(2rem); }
+.xl > * + * { margin-top: rfs(3.6rem); }

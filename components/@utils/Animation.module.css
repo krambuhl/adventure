@@ -1,0 +1,10 @@
+@keyframes blink {
+  to { visibility: hidden; }
+}
+
+.blink {
+  --speed: 1.5s;
+  --delay: 0s;
+
+  animation: blink var(--speed) steps(3, start) infinite var(--delay);
+}

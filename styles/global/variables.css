@@ -1,0 +1,48 @@
+:root {
+  /* colors */
+  --color-darker: #13100D;
+  --color-dark: #1C1916;
+  --color-mid-dark: #444;
+  --color-mid: #666;
+  --color-light: #fff;
+  --color-yellow: #F8D350;
+
+  /* color use */
+  --color-background: var(--color-dark);
+  --color-background-alt: var(--color-darker);
+  --color-foreground: var(--color-light);
+  --color-action: var(--color-yellow);
+  --color-passive: var(--color-mid);
+
+  /* spaces */
+  --space-xs: max(min(0.6rem, 1.5vw), 0.25rem);
+  --space-sm: max(min(1rem, 2vw), 0.6rem);
+  --space-md: max(min(2.5rem, 4vw), 1rem);
+  --space-lg: max(min(4rem, 6vw), 1.8rem);
+  --space-tab: calc(2ch + 1px);
+
+  /* sizes */
+  --width-xxs: 360px;
+  --width-xs: 480px;
+  --width-sm: 600px;
+  --width-md: 768px;
+  --width-lg: 1080px;
+  --width-xl: 1280px;
+  --width-xxl: 1440px;
+
+  /* weight */
+  --weight-normal: 400;
+  --weight-bold: 700;
+
+  /* fonts */
+  --font-family-mono: 'Overpass Mono', monospace;
+  --font-size-base: 14px;
+  --font-height-base: 1.5em;
+
+  /* fonts */
+  --font-family: var(--font-family-mono);
+  --font-size: var(--font-size-base);
+  --font-weight: var(--weight-normal);
+  --font-height: var(--font-height-base);
+  --font-style: normal;
+}

@@ -1,0 +1,15 @@
+@import url(breakpoints.css);
+
+.root {
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.wrapper {
+  --padding: calc(var(--space-md) * 2) var(--space-md) calc(var(--space-md) * 0.5);
+}
