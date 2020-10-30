@@ -1,5 +1,5 @@
 export { default as Entry } from './Entry/Entry'
-export { default as EntrySet } from './EntrySet/EntrySet'
+export { default as EntryContainer } from './EntryContainer/EntryContainer'
 export { default as GlobalFooter } from './GlobalFooter/GlobalFooter'
 export { default as GlobalHeader } from './GlobalHeader/GlobalHeader'
 export { default as PageLayout } from './PageLayout/PageLayout'

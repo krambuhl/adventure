@@ -1,18 +1,25 @@
-import React from 'react'
-import { useRouter } from 'next/router'
-import { Wrapper } from '@components'
-import { Rhythm } from '@utils'
-import Index from '@content/entries/index'
+import {
+  Entry,
+  EntryContainer,
+  TerminalSelect,
+  TerminalOption
+} from '@components'
 
-export default function IndexPage() {
-  const router = useRouter()
-  const { pid } = router.query
-
+export default function Index() {
   return (
-    <Wrapper>
-      <div className={Rhythm.xl}>
-        <Index />
-      </div>
-    </Wrapper>
+    <EntryContainer>
+      <Entry>
+        <p>You find a peculiar machine while wondering through the world wide web.</p>
+      </Entry>
+
+      <Entry type={Entry.action}>
+        <p>What do you do:</p>
+
+        <TerminalSelect>
+          <TerminalOption value="inspect">inspect the machine</TerminalOption>
+          <TerminalOption value="yeet">yeet away</TerminalOption>
+        </TerminalSelect>
+      </Entry>
+    </EntryContainer>
   )
 }

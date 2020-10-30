@@ -1,13 +1,13 @@
 import {
   Entry,
-  EntrySet,
+  EntryContainer,
   TerminalText
 } from '@components'
 
 
 export default function Project() {
   return (
-    <EntrySet>
+    <EntryContainer>
       <Entry>
         <p>Exercitation velit aliquip cupidatat labore duis nisi sint mollit.</p>
 
@@ -20,6 +20,6 @@ export default function Project() {
         <p>Some images of the project display on the screen:</p>
         <p>[photos]</p>
       </Entry>
-    </EntrySet>
+    </EntryContainer>
   )
 }

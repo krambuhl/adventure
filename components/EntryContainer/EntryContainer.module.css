@@ -1,0 +1,40 @@
+@import url(breakpoints.css);
+
+.root {
+  --border: var(--color-yellow);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.3s ease;
+  transition-property: transform, opacity;
+
+  & + & {
+    margin-top: var(--space-lg);
+
+    @media (--lt-sm) {
+      padding-top: var(--space-xl);
+      margin-top: var(--space-xl);
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: var(--space-md);
+        right: var(--space-md);
+        height: 2px;
+        background-color: var(--border);
+      }
+    }
+  }
+}
+
+.container {
+  @media (--sm) {
+    border: 2px solid var(--border);
+    padding: var(--space-md);
+    background-color: var(--color-background);
+    transition: border 0.3s ease;
+  }
+}

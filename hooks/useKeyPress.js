@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 
 export default function useKeyPress(handle, reqs = []) {
   useEffect(() => {

@@ -3,7 +3,7 @@ import css from './Wrapper.module.css'
 
 export default function Wrapper({
   width = Wrapper.content,
-  padding = Wrapper.normal,
+  padding = Wrapper.horizontal,
   children,
   className,
   ...props
@@ -25,3 +25,5 @@ Wrapper.text = css.widthText
 
 Wrapper.none = css.paddingNone
 Wrapper.normal = css.paddingNormal
+Wrapper.vertical = css.paddingVertical
+Wrapper.horizontal = css.paddingHorizontal

@@ -1,13 +1,13 @@
 import { Theme } from '@utils'
 import {
   Entry,
-  EntrySet,
+  EntryContainer,
   TerminalText
 } from '@components'
 
 export default function StrangeBrew() {
   return (
-    <EntrySet>
+    <EntryContainer>
       <Entry>
         <p>You tap on the <span className={Theme.action}>Strange Brew Strategies</span> project and another message begins playing:</p>
 
@@ -21,6 +21,6 @@ export default function StrangeBrew() {
         <p>Some images of the project display on the screen:</p>
         <p>[photos]</p>
       </Entry>
-    </EntrySet>
+    </EntryContainer>
   )
 }

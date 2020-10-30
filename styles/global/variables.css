@@ -19,6 +19,7 @@
   --space-sm: max(min(1rem, 2vw), 0.6rem);
   --space-md: max(min(2.5rem, 4vw), 1rem);
   --space-lg: max(min(4rem, 6vw), 1.8rem);
+  --space-xl: max(min(6rem, 8vw), 3.2rem);
   --space-tab: calc(2ch + 1px);
 
   /* sizes */

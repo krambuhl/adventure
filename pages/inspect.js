@@ -1,17 +1,14 @@
 import {
   Entry,
-  EntrySet,
+  EntryContainer,
   TerminalText,
   TerminalSelect,
   TerminalOption
 } from '@components'
 
-const Development = () => import('./development')
-const Visuals = () => import('./visuals')
-
 export default function Inspect() {
   return (
-    <EntrySet>
+    <EntryContainer>
       <Entry>
         <p>On closer inspection, you find a hand engraved sign that reads:</p>
 
@@ -27,11 +24,11 @@ export default function Inspect() {
         <p>Below are three buttons:</p>
 
         <TerminalSelect>
-          <TerminalOption value={Development}>web development</TerminalOption>
-          <TerminalOption value={Visuals}>visual experiments</TerminalOption>
+          <TerminalOption value="development">web development</TerminalOption>
+          <TerminalOption value="visuals">visual experiments</TerminalOption>
           <TerminalOption value="contact">contact me</TerminalOption>
         </TerminalSelect>
       </Entry>
-    </EntrySet>
+    </EntryContainer>
   )
 }

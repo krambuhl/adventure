@@ -1,12 +1,13 @@
 import { useState, useEffect, useRef } from 'react'
 import classnames from 'classnames'
-import { Animation } from '@utils'
+import Link from 'next/link'
 import { Text } from '@components'
 import { useKeyPress } from '@hooks'
 import css from './TerminalSelect.module.css'
 
 export function TerminalOption({
   label,
+  value,
   isActiveCursor,
   isActive,
   isLoading,
@@ -30,21 +31,23 @@ export function TerminalOption({
 
   return (
     <li className={classList} {...props}>
-      <a
-        ref={ref}
-        href="#"
-        onClick={handleActivate}
-        onMouseEnter={handleCursor}
-        onFocus={handleCursor}
-        className={css.link}
-      >
-        <span className={css.text}>{children}</span>
+      <Link href={`/${value}`}>
+        <a
+          ref={ref}
+          href={`/${value}`}
+          onClick={handleActivate}
+          onMouseEnter={handleCursor}
+          onFocus={handleCursor}
+          className={css.link}
+        >
+          <span className={css.text}>{children}</span>
 
-        {
-          label &&
-          <Text as="span" size={Text.sm} className={css.label}>{label}</Text>
-        }
-      </a>
+          {
+            label &&
+            <Text as="span" size={Text.sm} className={css.label}>{label}</Text>
+          }
+        </a>
+      </Link>
     </li>
   )
 }
@@ -64,14 +67,9 @@ export default function TerminalSelect({
   const childrenCount = React.Children.count(children)
 
   const handleActivate = (index) => (ev) => {
-    ev.preventDefault()
+    // ev.preventDefault()
     setActiveIndex(index)
     setLoading(true)
-
-    clearTimeout(timer.current)
-    timer.current = setTimeout(() => {
-      setLoading(false)
-    }, 3000)
   }
 
   const handleCursor = (index) => () => {

@@ -8,8 +8,13 @@
       text-decoration: underline;
     }
   }
+
+  .wrapper {
+    --padding: calc(var(--space-md) * 2) var(--space-md);
+
+    @media (--sm) {
+      --padding: var(--space-md);
+    }
+  }
 }
 
-.wrapper {
-  --padding: calc(var(--space-md) * 2) var(--space-md) calc(var(--space-md) * 0.5);
-}

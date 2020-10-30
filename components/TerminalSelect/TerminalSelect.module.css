@@ -61,7 +61,6 @@
 .isActive {
   .link::before {
     opacity: 1;
-    animation: none;
   }
 
   .label {
