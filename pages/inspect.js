@@ -13,10 +13,8 @@ export default function Inspect() {
         <p>On closer inspection, you find a hand engraved sign that reads:</p>
 
         <TerminalText>
-          <p>
-            programmer for hire<br />
-            press button for information
-          </p>
+          <p>programmer for hire</p>
+          <p>press button for information</p>
         </TerminalText>
       </Entry>
 
