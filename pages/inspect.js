@@ -14,7 +14,7 @@ export default function Inspect() {
 
         <TerminalText>
           <p>
-            programmer for hire, $90/hr<br />
+            programmer for hire<br />
             press button for information
           </p>
         </TerminalText>
