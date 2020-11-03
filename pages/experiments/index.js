@@ -16,7 +16,7 @@ export default function Visuals() {
         <p>a small screen slides out of hidden compartment and displays a list of projects:</p>
 
         <TerminalSelect>
-          <TerminalOption value="/visuals/project">Project</TerminalOption>
+          <TerminalOption value="/experiments/project">Project</TerminalOption>
         </TerminalSelect>
       </Entry>
     </EntryContainer>
