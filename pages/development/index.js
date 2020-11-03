@@ -25,15 +25,15 @@ export default function Development() {
         <p>a small screen slides out of hidden compartment and displays a list of projects:</p>
 
         <TerminalSelect>
-          <TerminalOption value="development/patreon-homepage" label="[PATREON/2020]">patreon homepage</TerminalOption>
-          <TerminalOption value="development/strange-brew" label="[BRIGADE/2020]">strange brew stategies</TerminalOption>
-          <TerminalOption value="development/spotify-ad-studio" label="[BRIGADE/2019]">spotify ad studio</TerminalOption>
-          <TerminalOption value="development/tezos-developer-portal" label="[BRIGADE/2019]">tezos developer portal</TerminalOption>
-          <TerminalOption value="development/macfaden-thorpe" label="[SMITH/2019]">macfaden & thorpe</TerminalOption>
-          <TerminalOption value="development/intuit-hackathon" label="[TURN/2018]">intuit hackathon</TerminalOption>
-          <TerminalOption value="development/keysight-technologies" label="[CDX/2016]">keysight techologies</TerminalOption>
-          <TerminalOption value="development/spectrum-health" label="[CDX/2016]">spectrum health</TerminalOption>
-          <TerminalOption value="development/trimet" label="[2015]">trimet.org</TerminalOption>
+          <TerminalOption value="/development/patreon-homepage" label="[PATREON/2020]">patreon homepage</TerminalOption>
+          <TerminalOption value="/development/strange-brew" label="[BRIGADE/2020]">strange brew stategies</TerminalOption>
+          <TerminalOption value="/development/spotify-ad-studio" label="[BRIGADE/2019]">spotify ad studio</TerminalOption>
+          <TerminalOption value="/development/tezos-developer-portal" label="[BRIGADE/2019]">tezos developer portal</TerminalOption>
+          <TerminalOption value="/development/macfaden-thorpe" label="[SMITH/2019]">macfaden & thorpe</TerminalOption>
+          <TerminalOption value="/development/intuit-hackathon" label="[TURN/2018]">intuit hackathon</TerminalOption>
+          <TerminalOption value="/development/keysight-technologies" label="[CDX/2016]">keysight techologies</TerminalOption>
+          <TerminalOption value="/development/spectrum-health" label="[CDX/2016]">spectrum health</TerminalOption>
+          <TerminalOption value="/development/trimet" label="[2015]">trimet.org</TerminalOption>
         </TerminalSelect>
       </Entry>
     </EntryContainer>

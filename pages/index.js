@@ -16,8 +16,8 @@ export default function Index() {
         <p>What do you do:</p>
 
         <TerminalSelect>
-          <TerminalOption value="inspect">inspect the machine</TerminalOption>
-          <TerminalOption value="yeet">yeet away</TerminalOption>
+          <TerminalOption value="/inspect">inspect the machine</TerminalOption>
+          <TerminalOption value="/yeet">yeet away</TerminalOption>
         </TerminalSelect>
       </Entry>
     </EntryContainer>

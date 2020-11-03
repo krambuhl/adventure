@@ -31,10 +31,9 @@ export function TerminalOption({
 
   return (
     <li className={classList} {...props}>
-      <Link href={`/${value}`}>
+      <Link href={`${value}`}>
         <a
           ref={ref}
-          href={`/${value}`}
           onClick={handleActivate}
           onMouseEnter={handleCursor}
           onFocus={handleCursor}

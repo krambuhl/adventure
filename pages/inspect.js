@@ -24,9 +24,9 @@ export default function Inspect() {
         <p>Below are three buttons:</p>
 
         <TerminalSelect>
-          <TerminalOption value="development">web development</TerminalOption>
-          <TerminalOption value="visuals">visual experiments</TerminalOption>
-          <TerminalOption value="contact">contact me</TerminalOption>
+          <TerminalOption value="/development">web development</TerminalOption>
+          <TerminalOption value="/visuals">visual experiments</TerminalOption>
+          <TerminalOption value="/contact">contact me</TerminalOption>
         </TerminalSelect>
       </Entry>
     </EntryContainer>
