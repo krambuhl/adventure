@@ -2,7 +2,7 @@ import classnames from 'classnames'
 import css from './Wrapper.module.css'
 
 export default function Wrapper({
-  width = Wrapper.content,
+  width = Wrapper.terminal,
   padding = Wrapper.horizontal,
   children,
   className,
@@ -20,8 +20,7 @@ export default function Wrapper({
 }
 
 Wrapper.page = css.widthPage
-Wrapper.content = css.widthContent
-Wrapper.text = css.widthText
+Wrapper.terminal = css.widthTerminal
 
 Wrapper.none = css.paddingNone
 Wrapper.normal = css.paddingNormal

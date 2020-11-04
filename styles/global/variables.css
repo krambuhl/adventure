@@ -1,3 +1,5 @@
+@import url(breakpoints.css);
+
 :root {
   /* colors */
   --color-darker: #13100D;
@@ -6,6 +8,7 @@
   --color-mid: #666;
   --color-light: #fff;
   --color-yellow: #F8D350;
+  --color-yellow-alt: #FFEFB6;
 
   /* color use */
   --color-background: var(--color-dark);
@@ -30,6 +33,7 @@
   --width-lg: 1080px;
   --width-xl: 1280px;
   --width-xxl: 1440px;
+  --width-terminal: var(--width-sm);
 
   /* weight */
   --weight-normal: 400;

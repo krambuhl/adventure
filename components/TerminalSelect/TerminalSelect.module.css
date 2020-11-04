@@ -30,6 +30,7 @@
     display: inline-block;
     opacity: 0;
     margin-right: 1ch;
+    animation: blink 1.5s steps(3, start) infinite;
   }
 
   &:hover,
@@ -40,7 +41,6 @@
     &::before {
       color: var(--color-yellow);
       opacity: 1;
-      animation: blink 1.5s steps(3, start) infinite;
     }
 
     .text {

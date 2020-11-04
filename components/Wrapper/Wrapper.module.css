@@ -10,8 +10,7 @@
 }
 
 .widthPage { --max-width: 100%; }
-.widthContent { --max-width: var(--width-xs); }
-.widthText { --max-width: var(--width-xs); }
+.widthTerminal { --max-width: var(--width-terminal); }
 
 .paddingNone { --padding: none; }
 .paddingNormal { --padding: var(--space-md); }

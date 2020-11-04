@@ -58,7 +58,6 @@ export default function TerminalSelect({
   ...props
 }) {
   const elRef = useRef()
-  const timer = useRef()
   const [cursorIndex, setCursorIndex] = useState(0)
   const [activeIndex, setActiveIndex] = useState(0)
   const [isLoading, setLoading] = useState(false)
@@ -72,6 +71,7 @@ export default function TerminalSelect({
   }
 
   const handleCursor = (index) => () => {
+    setActiveIndex(index)
     setCursorIndex(index)
   }
 
@@ -97,7 +97,11 @@ export default function TerminalSelect({
   }, [cursorIndex])
 
   return (
-    <div ref={elRef} className={classList} {...props}>
+    <div
+      ref={elRef}
+      className={classList}
+      {...props}
+    >
       <div className={css.caption}><Text size={Text.sm}>(select one)</Text></div>
 
       <ul>
