@@ -24,7 +24,7 @@ export default function Inspect() {
         <TerminalSelect>
           <TerminalOption value="/development">web development</TerminalOption>
           <TerminalOption value="/experiments">visual experiments</TerminalOption>
-          <TerminalOption value="/contact">contact me</TerminalOption>
+          <TerminalOption value="mailto://evan@kram.codes">contact me</TerminalOption>
         </TerminalSelect>
       </Entry>
     </EntryContainer>

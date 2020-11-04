@@ -24,7 +24,7 @@ export default function Yeet() {
 
         <TerminalSelect>
           <TerminalOption value="/resume">resume</TerminalOption>
-          <TerminalOption value="/contact">contact me</TerminalOption>
+          <TerminalOption value="mailto://evan@kram.codes">contact me</TerminalOption>
           <TerminalOption value="/leave">just let me leave</TerminalOption>
         </TerminalSelect>
       </Entry>
