@@ -1,15 +1,14 @@
 import { useContext } from 'react'
-import { VisualContainer } from '@components'
+import { Transport, VisualContainer } from '@components'
 import { TransportContext, TransportProvider } from '@contexts'
 
 function FibonacciRainbow () {
-  const { currentTime } = useContext(TransportContext)
-
+  const { time } = useContext(TransportContext)
   return (
     <VisualContainer>
-      <div style={{ textAlign: 'center' }}>
-        <p>fibonacci's rainbow</p>
-        <p>{currentTime}</p>
+      <Transport />
+      <div>
+        snapshot: {time}
       </div>
     </VisualContainer>
   )

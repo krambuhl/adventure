@@ -13,6 +13,7 @@
     "@next/mdx": "^9.5.3",
     "@prefresh/next": "^1.1.0",
     "classnames": "^2.2.6",
+    "ms-to-timecode": "^0.1.2",
     "next": "10",
     "next-compose-plugins": "^2.2.0",
     "next-ga": "^2.3.4",

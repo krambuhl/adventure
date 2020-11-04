@@ -2,20 +2,21 @@
 
 .root {
   display: flex;
+  flex-flow: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: var(--color-darker);
   width: 100%;
+
+  & > *:last-child {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   @media (--sm) {
     margin: 0 var(--space-sm) var(--space-sm);
   }
-}
-
-.paddingNormal {
-  padding: var(--space-md);
-}
-
-.paddingNone {
-  padding: 0
 }

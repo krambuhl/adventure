@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 
 const TransportContext = React.createContext({
   startTime: 0,
+  currentTime: 0,
   time: 0,
   setTime: () => {}
 })
@@ -21,7 +22,7 @@ export function TransportProvider({ children }) {
 
     timer.current = setInterval(() => {
       setCurrentTime(Date.now())
-    }, 1000 / 60)
+    }, 1000 / 30)
 
     return () => clearInterval(timer.current)
   }, [])
