@@ -14,6 +14,11 @@
   transition: 0.3s ease;
   transition-property: transform, opacity;
   width: 100%;
+  margin-bottom: calc(var(--space-md) * 2 + var(--font-height-base));
+
+  @media (--lt-sm) {
+    margin-bottom: calc(var(--space-md) * 4 + var(--font-height-base));
+  }
 
   & + & {
     margin-top: var(--space-lg);

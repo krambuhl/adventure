@@ -40,7 +40,6 @@
   flex-grow: 1;
   display: flex;
   margin: auto;
-  padding-bottom: 100px;
   width: 100%;
   justify-content: center;
 }
