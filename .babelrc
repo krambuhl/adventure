@@ -12,7 +12,8 @@
         "alias": {
           "@utils": "./components/@utils",
           "@components": "./components",
-          "@content": "./content",
+          "@contexts": "./contexts",
+          "@data": "./data",
           "@pages": "./pages",
           "@hooks": "./hooks",
           "@public": "./public",
