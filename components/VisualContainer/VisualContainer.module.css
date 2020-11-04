@@ -1,0 +1,19 @@
+@import url(breakpoints.css);
+
+.root {
+  display: flex;
+  background-color: var(--color-darker);
+  width: 100%;
+
+  @media (--sm) {
+    margin: 0 var(--space-sm) var(--space-sm);
+  }
+}
+
+.paddingNormal {
+  padding: var(--space-md);
+}
+
+.paddingNone {
+  padding: 0
+}

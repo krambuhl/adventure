@@ -1,16 +1,14 @@
+import { VisualContainer } from '@components'
+
 export default function FibonacciRainbow() {
   return (
     <>
-      <div className="root">
+      <VisualContainer>
         fibonacci's rainbow
-      </div>
+      </VisualContainer>
       <style jsx>{`
         .root {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background-color: black;
-          width: 100%;
+          background-color: red;
         }
       `}</style>
     </>
