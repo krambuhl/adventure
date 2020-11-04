@@ -1,7 +1,7 @@
 import classnames from 'classnames'
-import css from './PageLayout.module.css'
+import css from './Component.module.css'
 
-export default function PageLayout({
+export default function Component({
   children,
   className,
   ...props
