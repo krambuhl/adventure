@@ -16,6 +16,7 @@ export default function Visuals() {
         <p>a small screen slides out of hidden compartment and displays a list of projects:</p>
 
         <TerminalSelect>
+          <TerminalOption value="/experiments/fibonaccis-rainbow" label="[2020-11-04]">fibonacci's rainbow checkerboard</TerminalOption>
           <TerminalOption value="/experiments/project">Project</TerminalOption>
         </TerminalSelect>
       </Entry>
