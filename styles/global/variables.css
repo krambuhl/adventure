@@ -33,7 +33,7 @@
   --width-lg: 1080px;
   --width-xl: 1280px;
   --width-xxl: 1440px;
-  --width-terminal: var(--width-sm);
+  --width-terminal: var(--width-xs);
 
   /* weight */
   --weight-normal: 400;
