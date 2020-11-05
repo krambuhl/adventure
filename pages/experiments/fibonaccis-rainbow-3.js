@@ -61,7 +61,7 @@ function FibonacciRainbow () {
                     const slowFrame = (frame * 0.1)
 
                     const res = (
-                      (x * 1) + (y * 13) +
+                      (x * 3.3) + (y * 11.03) +
                       steps[Math.floor(x1 / 1) % paintColors.length] +
                       steps[Math.floor(y1 / 2) % paintColors.length] +
                       slowFrame
