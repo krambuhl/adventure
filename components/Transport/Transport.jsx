@@ -24,13 +24,12 @@ export default function Transport({
 
   const handleSpeed = () => {
     switch (speed) {
-      case 8: return setSpeed(0.1)
+      case 4: return setSpeed(0.1)
       case 0.1: return setSpeed(0.25)
       case 0.25: return setSpeed(0.5)
       case 0.5: return setSpeed(1)
       case 1: return setSpeed(2)
       case 2: return setSpeed(4)
-      case 4: return setSpeed(8)
     }
   }
 
