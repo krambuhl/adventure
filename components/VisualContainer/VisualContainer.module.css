@@ -5,7 +5,6 @@
   flex-flow: column;
   align-items: center;
   justify-content: flex-start;
-  background-color: var(--color-darker);
   width: 100%;
 
   & > *:last-child {
@@ -16,6 +15,10 @@
     align-items: center;
     justify-content: center;
     overflow: auto;
+  }
+
+  @media (--sm) {
+    border-top: 2px solid var(--color-yellow);
   }
 
   @media (--xxl) {
