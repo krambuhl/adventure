@@ -135,3 +135,5 @@ export default function FibonacciRainbowContainer() {
     </TransportProvider>
   )
 }
+
+FibonacciRainbowContainer.fullScreen = true;
