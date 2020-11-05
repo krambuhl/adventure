@@ -61,7 +61,7 @@ function FibonacciRainbow () {
                     const res = (
                       // (x * 120) +
                       // (y * 8) +
-                      // steps[Math.floor(x1 / 1) % paintColors.length] +
+                      steps[Math.floor(x1 / 1) % paintColors.length] +
                       steps[Math.floor(y1 / 1) % paintColors.length] +
                       slowFrame
                     )
@@ -94,7 +94,7 @@ function FibonacciRainbow () {
 
         .row {
           display: flex;
-          margin-top: 2px;
+          margin-top: 0px;
           justify-content: center;
           width: 100%;
         }
@@ -114,7 +114,7 @@ function FibonacciRainbow () {
           .row {
             flex-flow: column wrap;
             margin-top: 0;
-            margin-left: 2px;
+            margin-left: 0px;
             width: auto
           }
 
