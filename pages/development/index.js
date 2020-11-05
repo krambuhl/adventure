@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Theme } from '@utils'
 import {
   Entry,
@@ -15,9 +16,9 @@ export default function Development() {
 
         <TerminalText>
           <p>hello friend!</p>
-          <p>you seem to have found my machine...<br />i’m evan krambuhl.</p>
-          <p>i’ve been an internet athlete since i was a teenager and enjoy creating interactive experiences with emerging technologies.</p>
-          <p>check out some projects that i’ve worked on professionally here, or for other pleasant nonsense, see <a href="#">visual experiments</a>.</p>
+          <p>you seem to have found my machine...<br />i'm evan krambuhl.</p>
+          <p>i've been an internet athlete since i was a teenager and enjoy creating interactive experiences with emerging technologies.</p>
+          <p>check out some projects that i've worked on professionally here, or for other pleasant nonsense, see <Link href="/experiments"><a>visual experiments</a></Link>.</p>
         </TerminalText>
       </Entry>
 
