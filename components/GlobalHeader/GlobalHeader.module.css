@@ -12,12 +12,10 @@
   .wrapper {
     --padding: calc(var(--space-md) * 2) var(--space-md);
 
+    text-align: center;
+
     @media (--sm) {
       --padding: var(--space-md);
-    }
-
-    :global(.is-page-fullscreen) & {
-      text-align: center;
     }
   }
 }

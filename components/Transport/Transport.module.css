@@ -44,9 +44,10 @@
 }
 
 .actions {
-  border: 2px solid var(--color-mid);
+  border: 1px solid var(--color-mid-dark);
   border-radius: 3px;
   margin-top: var(--space-sm);
+  padding: 0 0.1em;
 
   @media (--sm) {
     margin-left: auto;
@@ -59,14 +60,14 @@
   background-color: transparent;
   border: none;
   color: var(--color-light);
-  padding: 0.2em 0.5em 0.28em;
+  padding: 0.2em 0.6em 0.28em;
   font-family: inherit;
   font-size: 1em;
   font-weight: var(--weight-bold);
   cursor: pointer;
 
   & + & {
-    border-left: 2px solid var(--color-mid);
+    border-left: 1px solid #222;
   }
 
   &:focus,
