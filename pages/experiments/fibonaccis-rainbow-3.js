@@ -113,7 +113,7 @@ function FibonacciRainbow () {
           }
 
           .row {
-            flex-flow: column wrap;
+            flex-flow: column-reverse wrap;
             margin-top: 0;
             margin-left: 0px;
             width: auto
