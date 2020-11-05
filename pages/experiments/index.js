@@ -23,7 +23,9 @@ export default function VisualExperiments() {
         <p>which experiment do you want to view:</p>
 
         <TerminalSelect>
-          <TerminalOption value="/experiments/fibonaccis-rainbow" label="[2020-11-04]">fibonacci's rainbow</TerminalOption>
+          <TerminalOption value="/experiments/fibonaccis-rainbow-3" label="[2020-11-04]">fibonacci's rainbow 3</TerminalOption>
+          <TerminalOption value="/experiments/fibonaccis-rainbow-2" label="[2020-11-04]">fibonacci's rainbow 2</TerminalOption>
+          <TerminalOption value="/experiments/fibonaccis-rainbow" label="[2020-11-04]">fibonacci's rainbow 1</TerminalOption>
           <TerminalOption value="/experiments/fibonaccis-firefighter" label="[2020-11-04]">fibonacci's firefighter</TerminalOption>
         </TerminalSelect>
       </Entry>
