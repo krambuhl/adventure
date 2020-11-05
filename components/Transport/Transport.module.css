@@ -5,7 +5,7 @@
   flex-flow: column nowrap;
   align-items: center;
   width: 100%;
-  border-top: 2px solid var(--color-dark);
+  border-bottom: 2px solid var(--color-dark);
   padding: var(--space-md);
 
   @media (--sm) {
@@ -46,12 +46,7 @@
 .actions {
   border: 2px solid var(--color-mid);
   border-radius: 3px;
-  padding: 0 0.5em;
   margin-top: var(--space-sm);
-
-  & > * + * {
-    margin-left: 1ch;
-  }
 
   @media (--sm) {
     margin-left: auto;
@@ -64,11 +59,15 @@
   background-color: transparent;
   border: none;
   color: var(--color-light);
-  padding: 0.2em 0.25em 0.28em;
+  padding: 0.2em 0.5em 0.28em;
   font-family: inherit;
   font-size: 1em;
   font-weight: var(--weight-bold);
   cursor: pointer;
+
+  & + & {
+    border-left: 2px solid var(--color-mid);
+  }
 
   &:focus,
   &:hover {

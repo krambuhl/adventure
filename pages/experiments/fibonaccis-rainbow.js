@@ -24,6 +24,8 @@ function FibonacciRainbow () {
 
   return (
     <VisualContainer>
+      <Transport />
+
       <div className="root">
         {
           rows.map(x => {
@@ -59,8 +61,6 @@ function FibonacciRainbow () {
           })
         }
       </div>
-
-      <Transport />
 
       <style jsx>{`
         .root {

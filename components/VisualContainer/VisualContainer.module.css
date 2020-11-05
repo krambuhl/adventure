@@ -8,11 +8,8 @@
   background-color: var(--color-darker);
   width: 100%;
 
-  & > *:first-child {
+  & > *:last-child {
     flex-grow: 1;
-  }
-
-  & > *:first-child {
     width: 100%;
     display: flex;
     flex-flow: column;
@@ -21,7 +18,7 @@
     overflow: auto;
   }
 
-  @media (--sm) {
+  @media (--xxl) {
     margin: 0 var(--space-sm) var(--space-sm);
   }
 }
