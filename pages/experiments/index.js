@@ -17,7 +17,6 @@ export default function Visuals() {
 
         <TerminalSelect>
           <TerminalOption value="/experiments/fibonaccis-rainbow" label="[2020-11-04]">fibonacci's rainbow</TerminalOption>
-          <TerminalOption value="/experiments/project">Project</TerminalOption>
         </TerminalSelect>
       </Entry>
     </EntryContainer>
