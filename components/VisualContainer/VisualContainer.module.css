@@ -8,12 +8,17 @@
   background-color: var(--color-darker);
   width: 100%;
 
-  & > *:last-child {
+  & > *:first-child {
     flex-grow: 1;
+  }
+
+  & > *:first-child {
     width: 100%;
     display: flex;
+    flex-flow: column;
     align-items: center;
     justify-content: center;
+    overflow: auto;
   }
 
   @media (--sm) {

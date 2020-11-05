@@ -1,37 +1,35 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useContext, useState } from 'react'
+import { useInterval } from '@hooks'
 
 const TransportContext = React.createContext({
   startTime: 0,
-  currentTime: 0,
+  time: 0,
   time: 0,
   setTime: () => {}
 })
 
+export default TransportContext
+
+export function useTransportContext() {
+  return useContext(TransportContext)
+}
+
 export function TransportProvider({ children }) {
-  const timer = useRef(null)
-  const [startTime, setStartTime] = useState(0)
-  const [currentTime, setCurrentTime] = useState(0)
-  const [time, setTime] = useState(0)
+  const [frame, setFrame] = useState(0)
+  const [frameSize, setFrameSize] = useState(1)
 
-  useEffect(() => {
-    setStartTime(Date.now())
-  }, [])
-
-  useEffect(() => {
-    setCurrentTime(Date.now())
-
-    timer.current = setInterval(() => {
-      setCurrentTime(Date.now())
-    }, 1000 / 30)
-
-    return () => clearInterval(timer.current)
-  }, [])
+  useInterval(() => {
+    setFrame(frame + frameSize)
+  }, 1000 / 30)
 
   return (
-    <TransportContext.Provider value={{ startTime, currentTime, time, setTime }}>
+    <TransportContext.Provider value={{
+      frame,
+      setFrame,
+      frameSize,
+      setFrameSize,
+    }}>
       {children}
     </TransportContext.Provider>
   )
 }
-
-export default TransportContext
