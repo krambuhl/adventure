@@ -22,9 +22,10 @@ function CustomApp({ Component, pageProps }) {
         <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@400;700&display=swap" rel="stylesheet" />
       </Head>
 
-      <PageLayout {...pageProps}>
-        <Component {...pageProps} />
-      </PageLayout>
+      <PageLayout
+        pageProps={pageProps}
+        Component={Component}
+      />
     </React.Fragment>
   )
 }

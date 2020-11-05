@@ -15,6 +15,10 @@
     @media (--sm) {
       --padding: var(--space-md);
     }
+
+    :global(.is-page-fullscreen) & {
+      text-align: center;
+    }
   }
 }
 
