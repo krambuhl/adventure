@@ -36,7 +36,7 @@ export function TerminalOption({
           ref={ref}
           onClick={handleActivate}
           onMouseEnter={handleCursor}
-          onFocus={handleCursor}
+          // onFocus={handleCursor}
           className={css.link}
         >
           <span className={css.text}>{children}</span>
@@ -89,12 +89,12 @@ export default function TerminalSelect({
     }
   }
 
-  useKeyPress(ev =>  {
-    switch(ev.key) {
-      case 'ArrowUp': return handleArrow(ev, cursorIndex - 1)
-      case 'ArrowDown': return handleArrow(ev, cursorIndex + 1)
-    }
-  }, [cursorIndex])
+  // useKeyPress(ev =>  {
+  //   switch(ev.key) {
+  //     case 'ArrowUp': return handleArrow(ev, cursorIndex - 1)
+  //     case 'ArrowDown': return handleArrow(ev, cursorIndex + 1)
+  //   }
+  // }, [cursorIndex])
 
   return (
     <div

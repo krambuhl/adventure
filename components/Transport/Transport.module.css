@@ -48,10 +48,25 @@
   border-radius: 3px;
   margin-top: var(--space-sm);
   padding: 0 0.1em;
+  display: flex;
+
+  & > * + *  {
+    border-left: 1px solid var(--color-mid-dark) !important;
+  }
 
   @media (--sm) {
     margin-left: auto;
     margin-top: 0;
+  }
+}
+
+.speed {
+  display: flex;
+  align-items: center;
+  padding: 0 1ch;
+
+  input {
+    margin: 0 0 0 1ch;
   }
 }
 
@@ -65,10 +80,6 @@
   font-size: 1em;
   font-weight: var(--weight-bold);
   cursor: pointer;
-
-  & + & {
-    border-left: 1px solid #222;
-  }
 
   &:focus,
   &:hover {

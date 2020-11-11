@@ -14,11 +14,6 @@ export default function PageLayout({
     'is-page-fullscreen': Component.fullScreen
   }, className)
 
-  console.log({
-    fullScreen,
-    props
-  })
-
   return (
     <div className={classList} {...props}>
       <GlobalHeader />
