@@ -35,7 +35,7 @@ function Output () {
           const yAbs = Math.abs(y - size / 2)
 
           const res = (
-            (xSlowFrame * (Math.atan(size / 1.7 - xAbs) + 1) * 100) +
+            (xSlowFrame * (Math.atan(size / 1.7 - xAbs) + 1) * 10) +
             (ySlowFrame * (Math.atan(size / 1.5 - yAbs) + 1) * 0.1) +
             0
           )

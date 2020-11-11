@@ -13,8 +13,8 @@ function fibonacci(num) {
   return list
 }
 
-const rows = Array.from({ length: 6 }).map((_, x) => x)
-const columns = Array.from({ length: 50 }).map((_, x) => x)
+const rows = Array.from({ length: 32 }).map((_, x) => x)
+const columns = Array.from({ length: 32 }).map((_, x) => x)
 
 const steps = fibonacci(12)
 
@@ -42,6 +42,23 @@ const paintColors = [
   map.LawnGreen,
 ]
 
+
+function getCellColor({ x, y, frame, colors }) {
+  const slowFrame = (frame * 0.1)
+  const xSlowFrame = (frame * 0.0001)
+  const ySlowFrame = (frame * 0.0003)
+
+  const res = (
+    (xSlowFrame * x * 3.3) +
+    (ySlowFrame * y * 12.5) +
+    steps[Math.floor(x / 1) % colors.length] +
+    steps[Math.floor(y / 2) % colors.length] +
+    slowFrame
+  )
+
+  return colors[Math.floor(res % colors.length)]
+}
+
 function FibonacciRainbow () {
   const { frame } = useTransportContext()
 
@@ -56,23 +73,14 @@ function FibonacciRainbow () {
               <div key={x} className="row">
                 {
                   columns.map(y => {
-                    const x1 = x + 0
-                    const y1 = y + 0
-                    const slowFrame = (frame * 0.1)
-
-                    const res = (
-                      (x * 3.3) + (y * 11.03) +
-                      steps[Math.floor(x1 / 1) % paintColors.length] +
-                      steps[Math.floor(y1 / 2) % paintColors.length] +
-                      slowFrame
-                    )
+                    const color = getCellColor({ x, y, frame, colors: paintColors })
 
                     return (
                       <div
                         key={y}
                         className="cell"
                         style={{
-                          backgroundColor: paintColors[Math.floor(res % paintColors.length)]
+                          backgroundColor: color
                         }}
                       />
                     )
@@ -102,7 +110,7 @@ function FibonacciRainbow () {
 
         .cell {
           width: clamp(16px, 2vw, 20px);
-          height: clamp(16px, 10vh, 72px);
+          height: clamp(16px, 2vw, 20px);
           background-color: white;
           color: black;
         }
