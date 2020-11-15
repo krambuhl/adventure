@@ -23,6 +23,8 @@ export default function VisualExperiments() {
         <p>which experiment do you want to view:</p>
 
         <TerminalSelect>
+          <TerminalOption value="/experiments/dolph-in-portland" label="[2020-11-14]">dolph in portland</TerminalOption>
+          <TerminalOption value="/experiments/kaleidoscope-2" label="[2020-11-13]">kaleidoscope</TerminalOption>
           <TerminalOption value="/experiments/kaleidoscope" label="[2020-11-12]">kaleidoscope</TerminalOption>
           <TerminalOption value="/experiments/new-day-rainbow" label="[2020-11-10]">new day rainbow</TerminalOption>
           <TerminalOption value="/experiments/warp-rainbow" label="[2020-11-10]">warp rainbow</TerminalOption>
