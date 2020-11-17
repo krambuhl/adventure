@@ -18,16 +18,16 @@ export default function Grid ({
     <>
       <div className={classList} {...props}>
         {
-          rows.map(x => {
+          rows.map(y => {
             return (
-              <div key={x} className="row">
+              <div key={y} className="row">
                 {
-                  columns.map(y => {
+                  columns.map(x => {
                     const style = getCellStyle({ x, y })
 
                     return (
                       <div
-                        key={y}
+                        key={x}
                         className="cell"
                         style={style}
                       />
