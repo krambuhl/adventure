@@ -46,7 +46,7 @@ function Output () {
             (
               (
                 (
-                  ((x + y) % 15) >= 8
+                  ((x + y - 1) % 15) >= 8
                 ) ? (
                   clampSpinFrame1 * xAbs
                 ) : (
