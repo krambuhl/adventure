@@ -31,42 +31,45 @@ function Output () {
           const x1 = x + 1
           const y1 = y + 1
           const absFrame = Math.max(frame, 0)
-          const slowFrame = absFrame * 0.011
-          const slowerFrame = absFrame * 0.01
+          const slowishFrame = absFrame * 0.1
+          const slowFrame = absFrame * 0.00031
+          const slowerFrame = absFrame * 0.001
+          const floorFrame = Math.floor(slowishFrame)
           const xAbs = x1 - (size / 2)
           const yAbs = y1 - (size / 2)
 
           const spinFrame1 = Math.sin(slowFrame)
           const spinFrame2 = Math.sin(slowerFrame)
           const clampSpinFrame1 = (spinFrame1 * 0.15) + 1.85
-          const clampSpinFrame2 = (spinFrame2 * 0.15) + 1.75
+          const clampSpinFrame2 = (spinFrame2 * 0.15) + 1.5
 
-          const group = Math.floor((x + y - 1) / 3)
-          const mod = group % 3
+          const group = Math.floor((x + y - 1) / 4)
+          const mod = group % 4
+
+          const random1 = Math.random() * 0.01 * colors.length
+          const random2 = Math.random() * 0.1 * colors.length
+          const random3 = Math.random() * 0.5 * colors.length
 
           const res = (
             (colors.length - 1) *
             (
               (
                 (
-                  true
-                  // mod > colors.length / 2
+                  mod > 1
+                  // false
                 ) ? (
-                  clampSpinFrame1 * group + (
-                    mod > 4
-                      // ? 0.75 * group
-                      // : -0.75 * group
-                  )
+                  clampSpinFrame1 * ((xAbs % 2 ? (yAbs % 2 ? 3 : 4) : 0) + (xAbs * 4))
                 ) : (
-                  clampSpinFrame1 * group
+                  (clampSpinFrame1) * ((yAbs % 2 ? (xAbs % 2 ? 3 : 4) : 0) + (yAbs * 4))
                 )
               ) +
+              mod +
               // Math.atan(xAbs * slowFrame) +
               // (Math.atan(yAbs ^ 4)) +
               // (slowFrame) +
               0
             ) +
-            Math.random() * 0.05 * colors.length +
+            // Math.random() * 0.01 * colors.length +
             // (slowFrame * Math.atan(size / (xAbs + 1) / (yAbs + 2)) * 1) +
             // (slowFrame * Math.atan(size / (yAbs + 2) / (xAbs + 1)) * 1) +
             0
