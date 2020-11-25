@@ -18,13 +18,13 @@ const colors = [
 
 const colors2 = [
   color.Lavender,
-  color.Viola,
+  // color.Viola,
   // color.Black,
   // color.BloodOrange,
   // color.Orangina,
   // color.YellowCab,
   color.Malachite,
-  // color.SkyBlue,
+  color.SkyBlue,
 ]
 
 function Output () {
@@ -42,7 +42,7 @@ function Output () {
         getCellStyle={({ x, y }) => {
           const x1 = x + 1
           const y1 = y + 1
-          const absFrame = Math.max(frame, 0)
+          const absFrame = Math.min(Math.max(frame, 0), Infinity)
           const slowFrame = absFrame * 0.031
           const xAbs = x1 - (size / 2)
           const yAbs = y1 - (size / 2)
@@ -53,23 +53,21 @@ function Output () {
 
           const spinFrame1 = Math.sin(slowFrame) * 1 + 1
           const spinFrame2 = Math.sin(slowFrame) * 1 + 1
-          const spinFrame3 = frame % 10 / 10
+          const spinFrame3 = slowFrame % 1 / 1
           const clampSpinFrame1 = (frame / 12 * 0.25) + 0
-          const clampSpinFrame2 = ((frame) / 12 * 0.25) + 0
+          const clampSpinFrame2 = (frame / 12 * 0.25) + 0
 
-          let group = Math.floor(x / 1 - 16) % 3
-
-          group = group + 1 > (spinFrame3) * 4
+          let group = Math.floor(xAbs * yAbs * slowFrame) % 2
 
           const colorSet = group ? colors : colors2
           const res = (
             (colors.length - 1) *
             (
               (
-                group ? (
-                  clampSpinFrame1 * x1 + (y1 * 0.1)
+                true ? (
+                  spinFrame3 * y1
                 ) : (
-                  clampSpinFrame2 * y1 + (x1 * 1)
+                  spinFrame3 * x1
                 )
               ) +
               // Math.atan(xAbs * slowFrame) +
