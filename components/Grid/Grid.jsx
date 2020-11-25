@@ -28,7 +28,7 @@ export default function Grid ({
                     return (
                       <div
                         key={x}
-                        className="cell"
+                        className={classnames(css.cell, 'cell')}
                         style={style}
                       />
                     )
@@ -59,7 +59,7 @@ export default function Grid ({
         .cell {
           width: ${cellSize[0]};
           height: ${cellSize[1]};
-          background-color: white;
+          background-color: transparent;
           color: black;
         }
 

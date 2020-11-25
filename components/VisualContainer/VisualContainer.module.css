@@ -23,26 +23,7 @@
   }
 
   @media (--sm) {
-    &::before {
-      content: '';
-      position: sticky;
-      top: 0;
-      display: block;
-      width: 100%;
-      height: 2px;
-      animation: animated-background 2s linear infinite;
-      background-size: 200% 200%;
-      background-color: var(--color-yellow-alt);
-      background-repeat: no-repeat;
-      background-image:
-        linear-gradient(
-          to left,
-          var(--color-yellow),
-          var(--color-yellow-alt) 50%,
-          var(--color-yellow) 50%,
-          var(--color-yellow-alt)
-        );
-    }
+    border-top: 2px solid var(--color-yellow);
   }
 
   @media (--xxl) {

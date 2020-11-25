@@ -18,8 +18,10 @@ export default function Entry({
 
   React.Children.forEach(children, (child) => {
     if (
-      child.type === TerminalSelect ||
-      child.type === TerminalText
+      child && (
+        child.type === TerminalSelect ||
+        child.type === TerminalText
+      )
     ) {
       terminal.push(child)
     } else {

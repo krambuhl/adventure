@@ -8,7 +8,6 @@ import css from './TerminalSelect.module.css'
 export function TerminalOption({
   label,
   value,
-  isActiveCursor,
   isActive,
   isLoading,
   handleActivate,
@@ -17,26 +16,17 @@ export function TerminalOption({
   className,
   ...props
 }) {
-  const ref = useRef(null)
   const classList = classnames(css.option, {
     [css.isActive]: isActive,
     [css.isLoading]: isLoading
   }, className)
 
-  useEffect(() => {
-    if (isActiveCursor) {
-      ref.current.focus({ preventScroll: true })
-    }
-  }, [isActiveCursor])
-
   return (
     <li className={classList} {...props}>
       <Link href={`${value}`}>
         <a
-          ref={ref}
           onClick={handleActivate}
           onMouseEnter={handleCursor}
-          // onFocus={handleCursor}
           className={css.link}
         >
           <span className={css.text}>{children}</span>
@@ -47,6 +37,20 @@ export function TerminalOption({
           }
         </a>
       </Link>
+    </li>
+  )
+}
+
+export function TerminalLabel({
+  children,
+  className,
+  ...props
+}) {
+  const classList = classnames(css.groupLabel, className)
+
+  return (
+    <li className={classList} {...props}>
+      <p>{children}</p>
     </li>
   )
 }
@@ -65,8 +69,6 @@ export default function TerminalSelect({
   const childrenCount = React.Children.count(children)
 
   const handleActivate = (index) => (ev) => {
-    // ev.preventDefault()
-    setActiveIndex(index)
     setLoading(true)
   }
 
@@ -75,42 +77,25 @@ export default function TerminalSelect({
     setCursorIndex(index)
   }
 
-  const handleArrow = (ev, nextIndex) => {
-    if (elRef.current.contains(document.activeElement)) {
-      ev.preventDefault()
-
-      setCursorIndex(
-        nextIndex < 0
-          ? childrenCount - 1
-          : nextIndex >= childrenCount
-            ? 0
-            : nextIndex
-      )
-    }
-  }
-
-  // useKeyPress(ev =>  {
-  //   switch(ev.key) {
-  //     case 'ArrowUp': return handleArrow(ev, cursorIndex - 1)
-  //     case 'ArrowDown': return handleArrow(ev, cursorIndex + 1)
-  //   }
-  // }, [cursorIndex])
-
   return (
     <div
       ref={elRef}
       className={classList}
       {...props}
     >
-      <div className={css.caption}><Text size={Text.sm}>(select one)</Text></div>
+      {
+        caption &&
+        <div className={css.caption}><Text size={Text.sm}>{caption}</Text></div>
+      }
 
       <ul>
         {
           React.Children.map(children, (item, index) => {
             return React.cloneElement(item, {
               isLoading,
-              isActive: activeIndex === index,
-              isActiveCursor: cursorIndex === index,
+              isActive: index === activeIndex,
+              isActiveCursor: index === cursorIndex,
+              isExpanded: index === childrenCount - 1,
               handleActivate: handleActivate(index),
               handleCursor: handleCursor(index)
             })

@@ -1,3 +1,7 @@
 @import url(breakpoints.css);
 
 .root { }
+
+.cell {
+  background-color: transparent;
+}

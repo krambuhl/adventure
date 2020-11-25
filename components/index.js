@@ -7,6 +7,10 @@ export { default as PageLayout } from './PageLayout/PageLayout'
 export { default as Text } from './Text/Text'
 export { default as Transport } from './Transport/Transport'
 export { default as TerminalText } from './TerminalText/TerminalText'
-export { default as TerminalSelect, TerminalOption } from './TerminalSelect/TerminalSelect'
+export {
+  default as TerminalSelect,
+  TerminalOption,
+  TerminalLabel
+} from './TerminalSelect/TerminalSelect'
 export { default as VisualContainer } from './VisualContainer/VisualContainer'
 export { default as Wrapper } from './Wrapper/Wrapper'

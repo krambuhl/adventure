@@ -4,14 +4,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+html {
   font-family: var(--font-family);
   font-style: var(--font-style);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
-  line-height: var(--font-height);
   background-color: var(--color-background);
   color: var(--color-foreground);
+}
+
+body {
+  line-height: var(--font-height);
 }
 
 a {

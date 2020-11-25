@@ -7,11 +7,26 @@
   to { transform: rotate(360deg); }
 }
 
-.root {}
+.root {
+  padding-right: var(--space-tab);
+}
 
 .caption {
   margin-left: var(--space-tab);
   color: var(--color-passive);
+}
+
+.groupLabel {
+  margin-left: var(--space-tab);
+  margin-right: var(--space-tab);
+  margin-top: 1ex;
+
+  & > * {
+    font-size: 0.8em;
+    /* text-decoration: underline; */
+    text-transform: uppercase;
+    color: var(--color-mid-dark);
+  }
 }
 
 .option {
@@ -19,7 +34,7 @@
 }
 
 .link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   text-decoration: none;
   color: inherit;
@@ -28,9 +43,9 @@
     content: '>';
     color: var(--color-light);
     display: inline-block;
-    opacity: 0;
     margin-right: 1ch;
     animation: blink 1.5s steps(3, start) infinite;
+    opacity: 0;
   }
 
   &:hover,
@@ -53,9 +68,15 @@
   }
 }
 
+.text {
+  flex-grow: 1;
+  text-transform: lowercase;
+}
+
 .label {
   margin-left: 1ch;
   color: var(--color-mid-dark);
+  text-transform: uppercase;
 }
 
 .isActive {

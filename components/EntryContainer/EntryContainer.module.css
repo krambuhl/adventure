@@ -49,43 +49,7 @@
     padding: calc(var(--space-md) + var(--border) * 2);
     margin: var(--border);
     width: calc(100% - var(--border) * 2);
-    border-radius: 5px;
-    overflow: hidden;
-
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-    }
-
-    &::after {
-      background-color: var(--color-background);
-      top: var(--border);
-      left: var(--border);
-      right: var(--border);
-      bottom: var(--border);
-      z-index: -1;
-      border-radius: 3px;
-    }
-
-    &::before {
-      top: 50%;
-      left: 50%;
-      width: max(200vh, 200vw);
-      height: max(200vh, 200vw);
-      margin-top: calc(-0.5 * max(200vh, 200vw));
-      margin-left: calc(-0.5 * max(200vh, 200vw));
-      z-index: -2;
-      animation: rotate 8s linear infinite;
-      background-color: var(--color-yellow-alt);
-      background-repeat: no-repeat;
-      background-image:
-        conic-gradient(
-          from 0deg,
-          var(--color-yellow),
-          var(--color-yellow),
-          var(--color-yellow-alt)
-        );
-    }
+    border: 2px solid var(--color-yellow);
+    border-radius: 8px;
   }
 }

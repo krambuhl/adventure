@@ -1,4 +1,6 @@
 .root {
   font-weight: var(--weight-bold);
   padding-left: var(--space-tab);
+  padding-right: var(--space-tab);
+  text-transform: lowercase;
 }

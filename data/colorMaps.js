@@ -9,4 +9,6 @@ export const outdoorPaint = {
   Malachite: '#58BABB',
   MalachiteDark: '#1D817F',
   SkyBlue: '#1079CB',
+  White: '#fff',
+  Black: '#000',
 }
