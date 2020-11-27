@@ -79,6 +79,7 @@ export async function getStaticProps(context) {
     { title: 'countdown packing', url: 'countdown-packing', date: '2020-11-18' },
     { title: 'sequencing machine', url: 'sequencing-machine', date: '2020-11-24' },
     { title: 'spiral galaxy tv', url: 'spiral-galaxy-tv', date: '2020-11-24' },
+    { title: 'turkey tumble', url: 'turkey-tumble', date: '2020-11-26' },
   ]
 
   const projects = reverse(sortBy(
