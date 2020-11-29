@@ -81,6 +81,7 @@ export async function getStaticProps(context) {
     { title: 'spiral galaxy tv', url: 'spiral-galaxy-tv', date: '2020-11-24' },
     { title: 'turkey tumble', url: 'turkey-tumble', date: '2020-11-26' },
     { title: 'turkey tumble 2', url: 'turkey-tumble-2', date: '2020-11-26' },
+    { title: 'campari safari', url: 'campari-safari', date: '2020-11-28' },
   ]
 
   const projects = reverse(sortBy(
