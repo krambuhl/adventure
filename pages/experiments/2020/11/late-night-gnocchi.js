@@ -46,7 +46,7 @@ function Output () {
           const yAbs = Math.abs(y0)
 
           const slowFrame = frame * 0.1
-          const slowerFrame = frame * 0.01
+          const slowerFrame = frame * 0.019
           const slowestFrame = frame * 0.001
 
           const grid = 8
