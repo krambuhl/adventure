@@ -3,15 +3,16 @@ import { useTransportContext, TransportProvider } from '@contexts'
 import { outdoorPaint as color } from '@data/colorMaps'
 
 const size = 33
+
 const colors = [
   color.Malachite,
   color.MalachiteDark,
   color.MalachiteDark,
-  color.MalachiteDark,
-  color.SkyBlue,
-  color.SkyBlue,
   color.DeepSea,
   color.DeepSea,
+  color.SkyBlue,
+  color.SkyBlue,
+  color.SkyBlue,
 ]
 
 const colors2 = [
@@ -46,12 +47,11 @@ function Output () {
           const yAbs = Math.abs(y0)
 
           const slowFrame = frame * 0.1
-          const slowerFrame = frame * 0.019
+          const slowerFrame = frame * 0.015
           const slowestFrame = frame * 0.001
 
           const grid = 8
           const beak = grid / 2
-
 
           let flag1 = (
             Math.sin(slowerFrame * y0 + (x0 * 0.05)) >
