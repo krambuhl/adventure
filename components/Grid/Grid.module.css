@@ -1,7 +1,39 @@
 @import url(breakpoints.css);
 
-.root { }
+.root {
+  display: block;
+}
+
+.grid {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  padding: var(--space-md);
+  border: 2px solid var(--color-darker);
+  background-color: var(--color-dark);
+}
+
+.row {
+  display: flex;
+  margin-top: 0px;
+  justify-content: center;
+  width: 100%;
+}
 
 .cell {
   background-color: transparent;
+  color: black;
+}
+
+@media (max-width: 720px) {
+  .grid {
+    flex-flow: row-reverse wrap;
+  }
+
+  .row {
+    flex-flow: column-reverse wrap;
+    margin-top: 0;
+    margin-left: 0px;
+    width: auto
+  }
 }
