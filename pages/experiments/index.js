@@ -84,6 +84,8 @@ export async function getStaticProps(context) {
     { title: 'campari safari', url: 'campari-safari', date: '2020-11-28' },
     { title: 'late night gnocchi', url: 'late-night-gnocchi', date: '2020-11-30' },
     { title: 'the deco spins', url: 'the-deco-spins', date: '2020-11-30' },
+    { title: 'pump and zoom', url: 'pump-and-zoom', date: '2020-12-03' },
+    { title: 'spinning target', url: 'spinning-target', date: '2020-12-03' },
 
   ]
 
