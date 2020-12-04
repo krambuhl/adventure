@@ -1,0 +1,90 @@
+import { Grid, Transport, VisualContainer } from '@components'
+import { useTransportContext, TransportProvider } from '@contexts'
+import { outdoorPaint as color } from '@data/colorMaps'
+import { fibonacci } from '@data/math'
+
+const sizex = 52
+const sizey = 7
+
+const colors = [
+  color.Lavender,
+  color.Orangina,
+  color.Viola,
+  color.SkyBlue,
+  color.LawnGreen,
+  color.Malachite,
+  color.YellowCab,
+  color.BloodOrange,
+]
+
+// const steps = fibonacci(12)
+// const steps = [52, 52, 52, 52, 40, 32, 32, 24, 24, 16, 16, 8, 8]
+// const steps = [52, 48, 48, 40, 40, 32, 32, 24, 24, 16, 16, 8, 8]
+const steps = Array(7).fill(31)
+
+function getColor(x, y, offset = 5.395) {
+  const start = steps.slice(0, x)
+    .reduce((sum, size, i) => (
+      i % offset > 2 ? sum + (size / 2) : sum
+    ), Math.sin(frame) * 100)
+  return (
+    ((start + y + x + 0) * offset) %
+    colors.length
+  )
+}
+
+function Output () {
+  const { frame } = useTransportContext()
+
+  return (
+    <VisualContainer>
+      <Transport />
+
+      <Grid
+        rows={sizey}
+        columns={sizex}
+        cellSize={[`16px`, `60px`]}
+        mobileCellSize={[`48px`, `12px`]}
+        getCellStyle={({ x, y }) => {
+          const offset = 5.394
+          const start = (
+            steps
+              .slice(0, x)
+              .reduce((sum, size, i) => (
+                sum + (size / 4) + 13
+              ), (Math.sin(frame / 100000 * (y + 1)) * 100))
+          )
+
+          const res = (
+            ((start + y + x + 0) * offset) %
+            colors.length
+          )
+
+          if (isNaN(res)) return {
+            backgroundColor: colors[0]
+          }
+
+          return {
+            // margin: '2px 0 0 0',
+            backgroundColor: colors[
+              Math.floor(
+                Math.abs(res) %
+                colors.length
+              )
+            ]
+          }
+        }}
+      />
+    </VisualContainer>
+  )
+}
+
+export default function OutputContainer() {
+  return (
+    <TransportProvider>
+      <Output />
+    </TransportProvider>
+  )
+}
+
+OutputContainer.fullScreen = true;

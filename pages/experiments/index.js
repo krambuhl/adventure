@@ -86,6 +86,7 @@ export async function getStaticProps(context) {
     { title: 'the deco spins', url: 'the-deco-spins', date: '2020-11-30' },
     { title: 'pump and zoom', url: 'pump-and-zoom', date: '2020-12-03' },
     { title: 'spinning target', url: 'spinning-target', date: '2020-12-03' },
+    { title: 'checkerboarding the rainbow', url: 'checkerboarding-the-rainbow', date: '2020-12-03' },
 
   ]
 
