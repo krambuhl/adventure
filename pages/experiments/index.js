@@ -104,8 +104,6 @@ export async function getStaticProps() {
       })
   )
 
-  console.log(modules)
-
   const projects = reverse(sortBy(
     modules.map((project, id) => {
       const { date } = project
