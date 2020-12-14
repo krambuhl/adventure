@@ -90,5 +90,5 @@ export default function OutputContainer() {
 }
 
 OutputContainer.fullScreen = true
-OutputContainer.date2 = '2020-12-13'
+OutputContainer.date = '2020-12-13'
 OutputContainer.title = 'Hello Again'
