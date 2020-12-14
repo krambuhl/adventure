@@ -65,11 +65,3 @@ function Output () {
     </VisualContainer>
   )
 }
-
-export default function OutputContainer() {
-  return (
-    <TransportProvider>
-      <Output />
-    </TransportProvider>
-  )
-}
