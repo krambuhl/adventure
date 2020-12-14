@@ -40,9 +40,7 @@ function Output () {
           const res = (
             (colors.length - 1) *
             (
-              (Math.sin(x0 * slowestFrame) * Math.cos(y0 * slowestFrame)) *
-              // slowestFrame *
-              colors.length
+              Math.sin(y0 * slowerFrame) * 4.14 + Math.sin(x0 * slowestFrame) * 4.3
             ) +
             0
           )
@@ -69,4 +67,4 @@ export default function OutputContainer() {
 }
 
 OutputContainer.fullScreen = true
-OutputContainer.date = '2020-12-13'
+OutputContainer.date = '2020-12-14'
