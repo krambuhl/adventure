@@ -10,9 +10,7 @@ export default function PageLayout({
   className,
   ...props
 }) {
-  const classList = classnames(css.root, {
-    'is-page-fullscreen': Component.fullScreen
-  }, className)
+  const classList = classnames(css.root, className)
 
   return (
     <div className={classList} {...props}>

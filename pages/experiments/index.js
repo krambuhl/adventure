@@ -1,6 +1,7 @@
 import glob from 'fast-glob'
 import path from 'path'
 import fs from 'fs'
+import djson from 'dirty-json'
 import { reverse, sortBy, groupBy } from 'lodash'
 import { DateTime } from 'luxon'
 import leftpad from 'leftpad'
@@ -66,41 +67,37 @@ export async function getStaticProps() {
   const folder = 'pages/experiments/'
   const files = await glob(`${folder}**/*.js`)
 
-  const titleRe = /.title\s=\s['"]([\S\s]+?)['"]/
-  const dateRe = /.date\s=\s['"]([\S\s]+?)['"]/
+  const metaReg = /export\sconst\smeta\s=\s({[\s\S]+?})/gm
 
   const modules = await Promise.all(
     files
       .slice(1)
       .map(file => path.resolve(file))
       .map(file => {
+        const filestats = fs.statSync(file)
         const fileContents = fs.readFileSync(file, 'utf8')
-        const lines = fileContents.split(/\n/).filter(Boolean)
 
-        const filename = file.substr(0, file.indexOf('.js')).substr(file.lastIndexOf('/') + 1)
-        const url = file.substr(0, file.indexOf('.js')).substr(file.indexOf('/20') + 1)
+        const pathname = file.substr(0, file.indexOf('.js'))
+        const filename = pathname.substr(pathname.lastIndexOf('/') + 1)
+        const url = pathname.substr(pathname.indexOf('/20') + 1)
 
-        let title = lines.find(l => l.search(titleRe) >= 0)
-        let date = lines.find(l => l.search(dateRe) >= 0)
-
-        if (title) {
-          title = title.match(titleRe)[1]
-        } else {
-          title = filename.replace(/-/g, ' ')
-        }
-
-        if (date) {
-          date = date.match(dateRe)[1]
-        } else {
-          const res = fs.statSync(file)
-          date = res.birthtime.toISOString()
-        }
-
-        return {
-          title,
-          date,
+        const res = {
+          title: filename.replace(/-/g, ' '),
+          date: filestats.birthtime.toISOString(),
           url
         }
+
+        const match = fileContents.match(/export\sconst\smeta\s=\s({[\s\S]+?})/gm)
+
+        if (match) {
+          const meta = djson.parse(match[0].match(/({[\s\S]+?})/gm)[0])
+          return {
+            ...res,
+            ...meta
+          }
+        }
+
+        return res
       })
   )
 

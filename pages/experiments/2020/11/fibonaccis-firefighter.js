@@ -1,5 +1,10 @@
 import { Transport, VisualContainer } from '@components'
-import { useTransportContext, TransportProvider } from '@contexts'
+import { useTransportContext, withTransportProvider } from '@contexts'
+
+export default withTransportProvider(Output)
+export const meta = {
+  date: '2020-11-03'
+}
 
 const rows = Array.from({ length: 15 }).map((_, x) => x)
 const columns = Array.from({ length: 28 }).map((_, x) => x)
@@ -100,14 +105,3 @@ function FibonacciFirefighter () {
     </VisualContainer>
   )
 }
-
-export default function FibonacciFirefighterContainer() {
-  return (
-    <TransportProvider>
-      <FibonacciFirefighter />
-    </TransportProvider>
-  )
-}
-
-FibonacciFirefighterContainer.fullScreen = true;
-FibonacciFirefighterContainer.date = '2020-11-04'

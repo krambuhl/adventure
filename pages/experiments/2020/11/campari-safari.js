@@ -1,6 +1,11 @@
 import { Grid, Transport, VisualContainer } from '@components'
-import { useTransportContext, TransportProvider } from '@contexts'
+import { useTransportContext, withTransportProvider } from '@contexts'
 import { outdoorPaint as color } from '@data/colorMaps'
+
+export default withTransportProvider(Output)
+export const meta = {
+  date: '2020-11-28'
+}
 
 const size = 33
 const colors = [
@@ -93,13 +98,4 @@ function Output () {
   )
 }
 
-export default function OutputContainer() {
-  return (
-    <TransportProvider>
-      <Output />
-    </TransportProvider>
-  )
-}
 
-OutputContainer.fullScreen = true;
-OutputContainer.date = '2020-11-28'

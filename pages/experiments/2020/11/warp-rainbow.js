@@ -1,6 +1,11 @@
 import { Grid, Transport, VisualContainer } from '@components'
-import { useTransportContext, TransportProvider } from '@contexts'
+import { useTransportContext, withTransportProvider } from '@contexts'
 import { outdoorPaint as color } from '@data/colorMaps'
+
+export default withTransportProvider(Output)
+export const meta = {
+  date: '2020-11-10'
+}
 
 const size = 32
 const colors = [
@@ -48,14 +53,3 @@ function FibonacciRainbow () {
     </VisualContainer>
   )
 }
-
-export default function FibonacciRainbowContainer() {
-  return (
-    <TransportProvider>
-      <FibonacciRainbow />
-    </TransportProvider>
-  )
-}
-
-FibonacciRainbowContainer.fullScreen = true;
-FibonacciRainbowContainer.date = '2020-11-10'

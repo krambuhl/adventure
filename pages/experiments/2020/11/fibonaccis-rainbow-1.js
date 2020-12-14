@@ -1,5 +1,11 @@
 import { Transport, VisualContainer } from '@components'
-import { useTransportContext, TransportProvider } from '@contexts'
+import { useTransportContext, withTransportProvider } from '@contexts'
+
+export default withTransportProvider(Output)
+export const meta = {
+  title: 'Fibonacci\'s Rainbow 1',
+  date: '2020-11-04'
+}
 
 function fibonacci(num) {
   const list = [0, 1]
@@ -40,7 +46,7 @@ const paintColorsMap = {
 
 const paintColors = Object.values(paintColorsMap)
 
-function FibonacciRainbow () {
+function Output () {
   const { frame } = useTransportContext()
 
   return (
@@ -127,14 +133,3 @@ function FibonacciRainbow () {
     </VisualContainer>
   )
 }
-
-export default function FibonacciRainbowContainer() {
-  return (
-    <TransportProvider>
-      <FibonacciRainbow />
-    </TransportProvider>
-  )
-}
-
-FibonacciRainbowContainer.fullScreen = true
-FibonacciRainbowContainer.date = '2020-11-04'

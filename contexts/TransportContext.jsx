@@ -33,3 +33,13 @@ export function TransportProvider({ children }) {
     </TransportContext.Provider>
   )
 }
+
+export function withTransportProvider(Children) {
+  return function TransportContainer() {
+    return (
+      <TransportProvider>
+        <Children />
+      </TransportProvider>
+    )
+  }
+}

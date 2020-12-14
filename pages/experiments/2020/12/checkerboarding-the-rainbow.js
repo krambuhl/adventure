@@ -1,7 +1,12 @@
 import { Grid, Transport, VisualContainer } from '@components'
-import { useTransportContext, TransportProvider } from '@contexts'
+import { useTransportContext, withTransportProvider } from '@contexts'
 import { outdoorPaint as color } from '@data/colorMaps'
-import { fibonacci } from '@data/math'
+
+export default withTransportProvider(Output)
+export const meta = {
+  date: '2020-12-03'
+}
+
 
 const sizex = 52
 const sizey = 7
@@ -78,14 +83,3 @@ function Output () {
     </VisualContainer>
   )
 }
-
-export default function OutputContainer() {
-  return (
-    <TransportProvider>
-      <Output />
-    </TransportProvider>
-  )
-}
-
-OutputContainer.fullScreen = true;
-OutputContainer.date = '2020-12-03'

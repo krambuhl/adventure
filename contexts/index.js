@@ -1,5 +1,6 @@
 export {
   default as TransportContext,
   useTransportContext,
-  TransportProvider
+  TransportProvider,
+  withTransportProvider
 } from './TransportContext'
