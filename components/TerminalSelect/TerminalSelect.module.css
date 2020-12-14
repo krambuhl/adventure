@@ -22,10 +22,9 @@
   margin-top: 1ex;
 
   & > * {
-    font-size: 0.8em;
-    /* text-decoration: underline; */
+    font-size: 0.7em;
     text-transform: uppercase;
-    color: var(--color-mid-dark);
+    color: var(--color-mid);
   }
 }
 
@@ -61,10 +60,6 @@
     .text {
       text-decoration: underline;
     }
-
-    .label {
-      color: var(--color-mid);
-    }
   }
 }
 
@@ -75,7 +70,7 @@
 
 .label {
   margin-left: 1ch;
-  color: var(--color-mid-dark);
+  color: var(--color-mid);
   text-transform: uppercase;
 }
 

@@ -20,7 +20,7 @@ const colors = [
 // const steps = fibonacci(12)
 // const steps = [52, 52, 52, 52, 40, 32, 32, 24, 24, 16, 16, 8, 8]
 // const steps = [52, 48, 48, 40, 40, 32, 32, 24, 24, 16, 16, 8, 8]
-const steps = Array(7).fill(31)
+const steps = Array(7).fill(52)
 
 function getColor(x, y, offset = 5.395) {
   const start = steps.slice(0, x)
@@ -49,14 +49,14 @@ function Output () {
           const offset = 5.394
           const start = (
             steps
-              .slice(0, x)
-              .reduce((sum, size, i) => (
-                sum + (size / 4) + 13
-              ), (Math.sin(frame / 100000 * (y + 1)) * 100))
+              .slice(0, y)
+              .reduce((sum, size, i) => {
+                return sum + (i % 3 == 0 ? size * 1.199 : size * 1.142)
+              }, 0)
           )
 
           const res = (
-            ((start + y + x + 0) * offset) %
+            ((start + x) * offset) %
             colors.length
           )
 
@@ -88,3 +88,4 @@ export default function OutputContainer() {
 }
 
 OutputContainer.fullScreen = true;
+OutputContainer.date = '2020-12-03'

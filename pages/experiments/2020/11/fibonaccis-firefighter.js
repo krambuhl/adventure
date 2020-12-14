@@ -110,3 +110,4 @@ export default function FibonacciFirefighterContainer() {
 }
 
 FibonacciFirefighterContainer.fullScreen = true;
+FibonacciFirefighterContainer.date = '2020-11-04'

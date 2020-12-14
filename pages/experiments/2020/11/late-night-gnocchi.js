@@ -92,3 +92,4 @@ export default function OutputContainer() {
 }
 
 OutputContainer.fullScreen = true;
+OutputContainer.date = '2020-11-30'

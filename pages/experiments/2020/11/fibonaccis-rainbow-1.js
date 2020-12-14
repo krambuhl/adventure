@@ -136,4 +136,5 @@ export default function FibonacciRainbowContainer() {
   )
 }
 
-FibonacciRainbowContainer.fullScreen = true;
+FibonacciRainbowContainer.fullScreen = true
+FibonacciRainbowContainer.date = '2020-11-04'
