@@ -1,3 +1,6 @@
+import glob from 'fast-glob'
+import path from 'path'
+import fs from 'fs'
 import { reverse, sortBy, groupBy } from 'lodash'
 import { DateTime } from 'luxon'
 import leftpad from 'leftpad'
@@ -37,14 +40,12 @@ export default function VisualExperiments({ projects, projectsByMonth }) {
                     projectsByMonth[key].map(({
                       title,
                       url,
-                      year,
-                      month,
                       monthLong,
                       day
                     }) => (
                       <TerminalOption
                         key={url}
-                        value={`/experiments/${year}/${month}/${url}`}
+                        value={`/experiments/${url}`}
                         label={`${monthLong.substr(0, 3)} ${leftpad(day, 2)}`}
                       >
                         {title}
@@ -61,37 +62,52 @@ export default function VisualExperiments({ projects, projectsByMonth }) {
   )
 }
 
-export async function getStaticProps(context) {
-  const allProjects = [
-    { title: 'fibonacci\'s firefighter', url: 'fibonaccis-firefighter', date: '2020-11-04' },
-    { title: 'fibonacci\'s rainbow 1', url: 'fibonaccis-rainbow', date: '2020-11-04' },
-    { title: 'fibonacci\'s rainbow 2', url: 'fibonaccis-rainbow-2', date: '2020-11-04' },
-    { title: 'fibonacci\'s rainbow 3', url: 'fibonaccis-rainbow-3', date: '2020-11-05' },
-    { title: 'spinning square', url: 'spinning-square', date: '2020-11-09' },
-    { title: 'warp rainbow', url: 'warp-rainbow', date: '2020-11-10' },
-    { title: 'new day rainbow', url: 'new-day-rainbow', date: '2020-11-10' },
-    { title: 'kaleidoscope', url: 'kaleidoscope', date: '2020-11-12' },
-    { title: 'kaleidoscope', url: 'kaleidoscope-2', date: '2020-11-13' },
-    { title: 'dolph in portland', url: 'dolph-in-portland', date: '2020-11-14' },
-    { title: 'two-by-four', url: 'two-by-four', date: '2020-11-16' },
-    { title: 'one-by-seven', url: 'one-by-seven', date: '2020-11-17' },
-    { title: 'one-by-seventeen', url: 'one-by-seventeen', date: '2020-11-17' },
-    { title: 'countdown packing', url: 'countdown-packing', date: '2020-11-18' },
-    { title: 'sequencing machine', url: 'sequencing-machine', date: '2020-11-24' },
-    { title: 'spiral galaxy tv', url: 'spiral-galaxy-tv', date: '2020-11-24' },
-    { title: 'turkey tumble', url: 'turkey-tumble', date: '2020-11-26' },
-    { title: 'turkey tumble 2', url: 'turkey-tumble-2', date: '2020-11-26' },
-    { title: 'campari safari', url: 'campari-safari', date: '2020-11-28' },
-    { title: 'late night gnocchi', url: 'late-night-gnocchi', date: '2020-11-30' },
-    { title: 'the deco spins', url: 'the-deco-spins', date: '2020-11-30' },
-    { title: 'pump and zoom', url: 'pump-and-zoom', date: '2020-12-03' },
-    { title: 'spinning target', url: 'spinning-target', date: '2020-12-03' },
-    { title: 'checkerboarding the rainbow', url: 'checkerboarding-the-rainbow', date: '2020-12-03' },
+export async function getStaticProps() {
+  const folder = 'pages/experiments/'
+  const files = await glob(`${folder}**/*.js`)
 
-  ]
+  const titleRe = /.title\s=\s['"]([\S\s]+?)['"]/
+  const dateRe = /.date\s=\s['"]([\S\s]+?)['"]/
+
+  const modules = await Promise.all(
+    files
+      .slice(1)
+      .map(file => path.resolve(file))
+      .map(file => {
+        const fileContents = fs.readFileSync(file, 'utf8')
+        const lines = fileContents.split(/\n/).filter(Boolean)
+
+        const filename = file.substr(0, file.indexOf('.js')).substr(file.lastIndexOf('/') + 1)
+        const url = file.substr(0, file.indexOf('.js')).substr(file.indexOf('/20') + 1)
+
+        let title = lines.find(l => l.search(titleRe) >= 0)
+        let date = lines.find(l => l.search(dateRe) >= 0)
+
+        if (title) {
+          title = title.match(titleRe)[1]
+        } else {
+          title = filename.replace(/-/g, ' ')
+        }
+
+        if (date) {
+          date = date.match(dateRe)[1]
+        } else {
+          const res = fs.statSync(file)
+          date = res.birthtime.toISOString()
+        }
+
+        return {
+          title,
+          date,
+          url
+        }
+      })
+  )
+
+  console.log(modules)
 
   const projects = reverse(sortBy(
-    allProjects.map((project, id) => {
+    modules.map((project, id) => {
       const { date } = project
       const { year, month, monthLong, weekdayLong, day } = DateTime.fromISO(date)
 
