@@ -6,7 +6,6 @@ const size = 32
 const colors = [
   color.Lavender,
   color.Viola,
-  // color.BlueVelvet,
   color.BloodOrange,
   color.Orangina,
   color.YellowCab,
