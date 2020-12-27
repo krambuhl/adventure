@@ -4,6 +4,23 @@ import classnames from 'classnames'
 import { TransportContext } from '@contexts'
 import css from './Transport.module.css'
 
+const speeds = [
+  0.0001,
+  0.001,
+  0.01,
+  0.1,
+  0.25,
+  0.5,
+  1,
+  2,
+  4,
+  8,
+  16,
+  32,
+  64,
+  128
+]
+
 export default function Transport({
   className,
   ...props
@@ -24,19 +41,7 @@ export default function Transport({
   }
 
   const handleSpeed = (ev) => {
-    switch (Number(ev.target.value)) {
-      case 0: return setSpeed(0.1)
-      case 1: return setSpeed(0.25)
-      case 2: return setSpeed(0.5)
-      case 3: return setSpeed(1)
-      case 4: return setSpeed(2)
-      case 5: return setSpeed(4)
-      case 6: return setSpeed(8)
-      case 7: return setSpeed(16)
-      case 8: return setSpeed(32)
-      case 9: return setSpeed(64)
-      case 10: return setSpeed(128)
-    }
+    setSpeed(speeds[Number(ev.target.value)])
   }
 
   const handleReverse = () => {
@@ -52,7 +57,7 @@ export default function Transport({
       <div className={css.data}>
         <div className={css.stat}>
           <span className={css.label}>frame: </span>
-          <span className={css.value}>{frame.toFixed(2)}</span>
+          <span className={css.value}>{frame.toFixed(4)}</span>
         </div>
       </div>
 
@@ -68,7 +73,7 @@ export default function Transport({
             defaultValue={3}
             step={1}
             min={0}
-            max={10}
+            max={speeds.length}
             onChange={handleSpeed}
             onMouseDown={handleSpeed}
           />

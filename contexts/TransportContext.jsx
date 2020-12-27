@@ -2,10 +2,10 @@ import React, { useContext, useState } from 'react'
 import { useInterval } from '@hooks'
 
 const TransportContext = React.createContext({
-  startTime: 0,
-  time: 0,
-  time: 0,
-  setTime: () => {}
+  frame: 0,
+  setFrame: () => {},
+  frameSize: 1,
+  setFrameSize: () => {}
 })
 
 export default TransportContext
