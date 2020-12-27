@@ -24,7 +24,7 @@ const colors = [
   '#0ee',
 ]
 
-function FibonacciFirefighter () {
+function Output () {
   const { frame } = useTransportContext()
 
   return (
