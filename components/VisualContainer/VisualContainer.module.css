@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: flex-start;
   width: 100%;
+  border-top: 2px solid var(--color-yellow);
 
   & > *:last-child {
     flex-grow: 1;
@@ -20,10 +21,6 @@
     align-items: center;
     justify-content: center;
     overflow: auto;
-  }
-
-  @media (--sm) {
-    border-top: 2px solid var(--color-yellow);
   }
 
   @media (--xxl) {

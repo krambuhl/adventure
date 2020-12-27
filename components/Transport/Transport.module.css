@@ -45,18 +45,16 @@
 
 .actions {
   border: 1px solid var(--color-mid-dark);
-  border-radius: 3px;
+  border-radius: 4px;
   margin-top: var(--space-sm);
-  padding: 0 0.1em;
+  padding-right: 0.1em;
   display: flex;
-
-  & > * + *  {
-    border-left: 1px solid var(--color-mid-dark) !important;
-  }
+  flex-flow: row wrap;
 
   @media (--sm) {
     margin-left: auto;
     margin-top: 0;
+    flex-flow: row;
   }
 }
 
@@ -64,9 +62,131 @@
   display: flex;
   align-items: center;
   padding: 0 1ch;
+  flex-grow: 1;
+}
 
-  input {
-    margin: 0 0 0 1ch;
+.speedWrap {
+  position: relative;
+  margin-top: max(-1vw, -5px);
+}
+
+.speedLabel {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: calc(var(--progress) * 92% + 4%);
+  padding: 0 1ch 1px;
+  background-color: var(--color-darker);
+  border: 1px solid var(--color-mid-dark);
+  border-radius: 3px;
+  transform: translate3d(-50%, 8px, 0);
+  opacity: 0.8;
+  transition: 0.3s ease;
+  transition-property: opacity, transform;
+
+  .speedInput:focus + & {
+    border: 1px solid var(--color-yellow);
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+
+  @media (--sm) {
+    left: calc(var(--progress) * 95% + 2.5%);
+  }
+}
+
+.speedInput {
+  --track: var(--color-light);
+  --handle: var(--color-light);
+  --handle-border: var(--color-dark);
+
+  width: 100%;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  appearance: none;
+  min-width: min(270px, 50vw);
+
+  &:focus {
+    --handle: var(--color-yellow);
+    --handle-border: var(--color-darker);
+
+    outline: none;
+  }
+
+  &::-webkit-slider-runnable-track {
+    background: var(--track);
+    border: 0;
+    border-radius: 2px;
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+  }
+
+  &::-webkit-slider-thumb {
+    margin-top: -6px;
+    width: 16px;
+    height: 16px;
+    background: var(--handle);
+    border: 2px solid var(--handle-border);
+    border-radius: 16px;
+    cursor: pointer;
+    appearance: none;
+  }
+
+  &:focus::-webkit-slider-runnable-track {
+    background: var(--track);
+  }
+
+  &::-moz-range-track {
+    background: var(--track);
+    border: 0;
+    border-radius: 2px;
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+  }
+
+  &::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: var(--handle);
+    border-radius: 16px;
+    cursor: pointer;
+  }
+
+  &::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    border-width: 7.5px 0;
+    color: transparent;
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+  }
+
+  &::-ms-fill-lower,
+  &::-ms-fill-upper {
+    background: var(--track);
+    border: 0;
+  }
+
+  &::-ms-thumb {
+    width: 16px;
+    height: 16px;
+    background: var(--handle);
+    border-radius: 16px;
+    cursor: pointer;
+    margin-top: 0px;
+    /*Needed to keep the Edge thumb centred*/
+  }
+
+  &:focus::-ms-fill-lower,
+  &:focus::-ms-fill-upper {
+    background: var(--track);
   }
 }
 
@@ -75,11 +195,17 @@
   background-color: transparent;
   border: none;
   color: var(--color-light);
-  padding: 0.2em 0.6em 0.28em;
+  padding: 0;
   font-family: inherit;
   font-size: 1em;
   font-weight: var(--weight-bold);
   cursor: pointer;
+
+  svg {
+    display: block;
+    width: 2em;
+    height: 2em;
+  }
 
   &:focus,
   &:hover {

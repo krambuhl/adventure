@@ -9,8 +9,11 @@
   flex-flow: column wrap;
   align-content: center;
   padding: var(--space-md);
-  border: 2px solid var(--color-darker);
   background-color: var(--color-dark);
+
+  @media (--sm) {
+    border: 2px solid var(--color-darker);
+  }
 }
 
 .row {
@@ -25,7 +28,7 @@
   margin: 0px 0px;
 }
 
-@media (max-width: 720px) {
+@media (--lt-md) {
   .grid {
     flex-flow: row-reverse wrap;
   }

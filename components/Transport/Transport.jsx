@@ -1,24 +1,18 @@
-import { useState, useEffect, useContext } from 'react'
-import msTimecode from 'ms-to-timecode'
+import { useState, useEffect, useContext, useRef } from 'react'
+import { reverse } from 'lodash'
+import { BiPause, BiPlay, BiStop } from 'react-icons/bi';
 import classnames from 'classnames'
 import { TransportContext } from '@contexts'
 import css from './Transport.module.css'
 
 const speeds = [
-  0.0001,
-  0.001,
-  0.01,
-  0.1,
-  0.25,
-  0.5,
-  1,
-  2,
-  4,
-  8,
-  16,
-  32,
-  64,
-  128
+  0.00001, 0.0001, 0.001, 0.01, 0.25, 0.5,
+  1, 2, 4, 8, 16, 32, 64, 128
+]
+
+const allSpeeds = [
+  ...reverse(speeds).map(speed => parseFloat(speed)).map(speed => speed * -1),
+  ...reverse(speeds).map(speed => parseFloat(speed))
 ]
 
 export default function Transport({
@@ -26,34 +20,69 @@ export default function Transport({
   ...props
 }) {
   const [isPlaying, setPlaying] = useState(true)
-  const [isReversed, setReversed] = useState(false)
   const [speed, setSpeed] = useState(1)
   const { frame, setFrame, setFrameSize } = useContext(TransportContext)
   const classList = classnames(css.root, className)
+  const ref = useRef()
 
   const handlePlayPause = () => {
     setPlaying(!isPlaying)
   }
 
-  const handleReset = () => {
+  const handleStop = () => {
     setPlaying(false)
     setFrame(0)
   }
 
-  const handleSpeed = (ev) => {
-    setSpeed(speeds[Number(ev.target.value)])
+  const handleChange = (ev) => {
+    setSpeed(allSpeeds[Number(ev.target.value)])
+    ev.preventDefault()
   }
 
-  const handleReverse = () => {
-    setReversed(!isReversed)
+  const handleInput = (ev) => {
+    setSpeed(allSpeeds[Number(ev.target.value)])
+  }
+
+  const handleKeyboard = (ev) => {
+    console.log(ev.keyCode)
+    if (ev.keyCode === 32) {
+      setPlaying(!isPlaying)
+    }
+
+    if (ev.keyCode === 37) {
+      const next = allSpeeds.indexOf(speed) - 1
+      setSpeed(allSpeeds[Math.max(next, 0)])
+    }
+
+    if (ev.keyCode === 39) {
+      const next = allSpeeds.indexOf(speed) + 1
+      setSpeed(allSpeeds[Math.min(next, allSpeeds.length - 1)])
+    }
+  }
+
+  const handleKeyboardCancel = (ev) => {
+    if (ev.keyCode === 32 || ev.keyCode === 37 || ev.keyCode === 39) {
+      ev.stopPropagation()
+    }
   }
 
   useEffect(() => {
-    setFrameSize(isPlaying ? speed * (!isReversed ? 1 : -1) : 0)
-  }, [isPlaying, isReversed, speed])
+    setFrameSize(isPlaying ? speed : 0)
+  }, [isPlaying, speed])
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyboard)
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyboard)
+    }
+  }, [isPlaying, allSpeeds, speed])
 
   return (
-    <div className={classList} {...props}>
+    <div
+      className={classList}
+      {...props}
+    >
       <div className={css.data}>
         <div className={css.stat}>
           <span className={css.label}>frame: </span>
@@ -62,24 +91,46 @@ export default function Transport({
       </div>
 
       <div className={css.actions}>
-        <button className={css.button} onClick={handlePlayPause}>
-          {isPlaying ? 'pause' : 'play'}
-        </button>
         <div className={css.speed}>
-          <span>{speed}x</span>
-          <input
-            type="range"
-            list="speed-tickmarks"
-            defaultValue={3}
-            step={1}
-            min={0}
-            max={speeds.length}
-            onChange={handleSpeed}
-            onMouseDown={handleSpeed}
-          />
+          <div className={css.speedWrap}>
+            <input
+              ref={ref}
+              type="range"
+              list="speed-tickmarks"
+              defaultValue={allSpeeds.indexOf(1)}
+              value={allSpeeds.indexOf(speed)}
+              step={1}
+              min={0}
+              max={allSpeeds.length - 1}
+              onChange={handleChange}
+              onInput={handleInput}
+              onKeyDown={handleKeyboardCancel}
+              className={css.speedInput}
+            />
+            <span
+              className={css.speedLabel}
+              style={{
+                '--progress': allSpeeds.indexOf(speed) / (allSpeeds.length - 1)
+              }}
+            >
+              frame size: {speed}
+            </span>
+          </div>
         </div>
-        <button className={css.button} onClick={handleReverse}>{!isReversed ? 'forward' : 'reverse'}</button>
-        <button className={css.button} onClick={handleReset}>reset</button>
+        <button
+          className={css.button}
+          onClick={handlePlayPause}
+          onKeyDown={handleKeyboardCancel}
+        >
+          {isPlaying ? <BiPause /> : <BiPlay />}
+        </button>
+        <button
+          className={css.button}
+          onClick={handleStop}
+          onKeyDown={handleKeyboardCancel}
+        >
+          <BiStop />
+        </button>
       </div>
     </div>
   )

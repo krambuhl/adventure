@@ -27,6 +27,7 @@
     "preact-render-to-string": "^5.1.10",
     "react": "16.14",
     "react-dom": "16.14",
+    "react-icons": "^4.1.0",
     "react-ssr-prepass": "npm:preact-ssr-prepass@^1.0.1",
     "react-typing-animation": "^1.6.2",
     "react-typist": "^2.0.5",
