@@ -42,7 +42,7 @@ function Output () {
         rows={size}
         columns={size}
         cellSize={[`15.5px`, `15.5px`]}
-        mobileCellSize={[`${100 / size}%`, `12px`]}
+        mobileCellSize={[`${90 / size}vw`, `${90 / size}vw`]}
         getCellStyle={({ x, y }) => {
           const x1 = x + 1
           const y1 = y + 1

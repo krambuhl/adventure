@@ -31,7 +31,7 @@ function Output () {
         rows={size}
         columns={size}
         cellSize={[`16px`, `16px`]}
-        mobileCellSize={[`${100 / size}%`, `12px`]}
+        mobileCellSize={[`${90 / size}vw`, `${90 / size}vw`]}
         getCellStyle={({ x, y }) => {
           const absFrame = Math.abs(frame)
           const xSlowFrame = (absFrame * 0.1)
