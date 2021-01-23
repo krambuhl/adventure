@@ -18,3 +18,23 @@ export const outdoorPaint = {
   White: '#fff',
   Black: '#000',
 }
+
+
+export const secrets = {
+  Stealth: '#1d2124',
+  Roof: '#707580',
+  Flesh: '#a48d86',
+  Bone: '#d6cbb9',
+  YellowCab: '#E9AC38',
+  Malachite: '#008d9a',
+  Lilac: '#977aad',
+  Lavender: '#5A4D9A',
+  BlueVelvet: '#361E67',
+  PurpleRed: '#4E1923',
+  RoyalRed: '#7A1A1E',
+  Brick: '#98221E',
+  ShrimpDark: '#da5200',
+  Shrimp: '#dc7348',
+  ShrimpPastel: '#d59681',
+}
+

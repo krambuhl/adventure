@@ -1,24 +1,29 @@
 import { useEffect } from 'react'
 import { Grid, Transport, VisualContainer } from '@components'
 import { useTransportContext, withTransportProvider } from '@contexts'
-import { outdoorPaint as color } from '@data/colorMaps'
+import { secrets as color } from '@data/colorMaps'
 
 export default withTransportProvider(Output)
 export const meta = {
-  date: '2020-12-26'
+  date: '2020-12-29'
 }
 
-const size = 36 / (15 / 32)
+const size = 36
 
 const colors = [
+  // color.Bone,
+  // color.RoyalRed,
+  color.Roof,
+  color.Roof,
+  color.Flesh,
+  color.Lilac,
+  color.Lilac,
   color.Lavender,
-  color.Viola,
-  color.BloodOrange,
-  color.Orangina,
+  color.Lavender,
   color.YellowCab,
-  color.LawnGreen,
-  color.Malachite,
-  color.SkyBlue,
+  color.ShrimpDark,
+  color.Shrimp,
+  color.ShrimpPastel,
 ]
 
 function Output () {
@@ -29,9 +34,9 @@ function Output () {
       <Transport />
 
       <Grid
-        rows={size}
-        columns={size}
-        cellSize={[`${512 / size}px`, `${512 / size}px`]}
+        rows={24}
+        columns={36}
+        cellSize={[`${600 / size}px`, `${600 / size}px`]}
         mobileCellSize={[`${90 / size}vw`, `${135 / size}vw`]}
         getCellStyle={({ x, y }) => {
           const x1 = x + 1
@@ -43,11 +48,14 @@ function Output () {
           const slowerFrame = frame * 0.015
           const slowestFrame = frame * 0.001
 
-          const res = (
+          const res = (akr
             (colors.length - 1) *
             (
-              (y1 * slowerFrame) * 2.1 + Math.sin(x1 * slowestFrame) + (slowestFrame ^ (x1 + y1))
-              // Math.sin(y0 * slowerFrame) * 4.14 + Math.sin(x0 * slowestFrame) * 4.3
+              // (x1 * y1 / (size - 16)) +
+              // Math.sin(slowFrame) * Math.sin(x1 * y1) +
+              (slowerFrame + Math.sin(x1 & 7.24) + Math.cos(y & 9))
+              // 0
+              // Math.sin(y0 * slowerFrame) * 4.1 + Math.sin(x0 * slowestFrame) * 4.3
             ) +
             0
           )
