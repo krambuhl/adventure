@@ -48,7 +48,7 @@ function Output () {
           const slowerFrame = frame * 0.015
           const slowestFrame = frame * 0.001
 
-          const res = (akr
+          const res = (
             (colors.length - 1) *
             (
               // (x1 * y1 / (size - 16)) +
