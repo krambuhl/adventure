@@ -11,31 +11,13 @@ export const meta = {
 function Output () {
   return (
     <VisualContainer>
-      <Transport autoplay={false} />
-      <Sketch sketch={sketch} />
+      <Transport autoplay={true} />
+      <Sketch
+        draw={(p, { frame }) => {
+          const y = frame * 2.5 % p.height
+          p.line(0, y, p.width, y)
+        }}
+      />
     </VisualContainer>
   )
-}
-
-function sketch (p) {
-  let frame = 0
-  let frameSize = 1
-
-  p.setup = () => {
-    p.createCanvas(600, 600)
-    p.frameRate(30)
-  }
-
-  p.draw = () => {
-    p.background(0)
-    p.stroke(255)
-
-    const y = frame % p.height
-    p.line(0, y, p.width, y)
-  }
-
-  p.myCustomRedrawAccordingToNewPropsHandler = function (props) {
-    if (props.frame !== null) frame = props.frame
-    if (props.frameSize !== null) frameSize = props.frameSize
-  }
 }
