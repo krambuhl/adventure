@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import classnames from 'classnames'
-import { Text, Wrapper } from '@components'
+import { Text, Wrapper } from 'components'
 import css from './GlobalHeader.module.css'
 
 export default function GlobalHeader({

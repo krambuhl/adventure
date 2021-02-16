@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react'
 import classnames from 'classnames'
-import { Rhythm } from '@utils'
-import { Wrapper } from '@components'
-import { useFocus } from '@hooks'
+import { Rhythm } from 'utils'
+import { Wrapper } from 'components'
+import { useFocus } from 'hooks'
 import css from './EntryContainer.module.css'
 
 export default function EntryContainer({

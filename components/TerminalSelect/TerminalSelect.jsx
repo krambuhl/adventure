@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import classnames from 'classnames'
 import Link from 'next/link'
-import { Text } from '@components'
-import { useKeyPress } from '@hooks'
+import { Text } from 'components'
+import { useKeyPress } from 'hooks'
 import css from './TerminalSelect.module.css'
 
 export function TerminalOption({

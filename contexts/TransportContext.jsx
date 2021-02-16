@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { useInterval } from '@hooks'
+import { useInterval } from 'hooks'
 
 const TransportContext = React.createContext({
   frame: 0,

@@ -1,12 +1,12 @@
 import Link from 'next/link'
-import { Theme } from '@utils'
+import { Theme } from 'utils'
 import {
   Entry,
   EntryContainer,
   TerminalText,
   TerminalSelect,
   TerminalOption
-} from '@components'
+} from 'components'
 
 export default function Development() {
   return (

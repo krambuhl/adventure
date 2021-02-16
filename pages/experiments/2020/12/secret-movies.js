@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
-import { Grid, Transport, VisualContainer } from '@components'
-import { useTransportContext, withTransportProvider } from '@contexts'
-import { secrets as color } from '@data/colorMaps'
+import { Grid, Transport, VisualContainer } from 'components'
+import { useTransportContext, withTransportProvider } from 'contexts'
+import { secrets as color } from 'data/colorMaps'
 
 export default withTransportProvider(Output)
 export const meta = {

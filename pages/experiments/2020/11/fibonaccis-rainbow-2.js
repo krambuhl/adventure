@@ -1,5 +1,5 @@
-import { Transport, VisualContainer } from '@components'
-import { useTransportContext, withTransportProvider } from '@contexts'
+import { Transport, VisualContainer } from 'components'
+import { useTransportContext, withTransportProvider } from 'contexts'
 
 export default withTransportProvider(Output)
 export const meta = {

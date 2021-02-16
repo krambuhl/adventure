@@ -2,7 +2,7 @@ import { useState, useEffect, useContext, useRef } from 'react'
 import { reverse } from 'lodash'
 import { BiPause, BiPlay, BiStop } from 'react-icons/bi';
 import classnames from 'classnames'
-import { TransportContext } from '@contexts'
+import { TransportContext } from 'contexts'
 import css from './Transport.module.css'
 
 const speeds = [
@@ -16,11 +16,13 @@ const allSpeeds = [
 ]
 
 export default function Transport({
+  autoplay = true,
+  initialSpeed = 1,
   className,
   ...props
 }) {
-  const [isPlaying, setPlaying] = useState(true)
-  const [speed, setSpeed] = useState(1)
+  const [isPlaying, setPlaying] = useState(autoplay)
+  const [speed, setSpeed] = useState(initialSpeed)
   const { frame, setFrame, setFrameSize } = useContext(TransportContext)
   const classList = classnames(css.root, className)
   const ref = useRef()

@@ -3,24 +3,6 @@
     "next/babel"
   ],
   "plugins": [
-    "@babel/plugin-proposal-optional-chaining",
-    [
-      "module-resolver",
-      {
-        "root": [
-          "./"
-        ],
-        "alias": {
-          "@utils": "./components/@utils",
-          "@components": "./components",
-          "@contexts": "./contexts",
-          "@data": "./data",
-          "@pages": "./pages",
-          "@hooks": "./hooks",
-          "@public": "./public",
-          "@styles": "./styles"
-        }
-      }
-    ]
+    "@babel/plugin-proposal-optional-chaining"
   ]
 }

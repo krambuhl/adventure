@@ -4,7 +4,7 @@ import {
   TerminalText,
   TerminalSelect,
   TerminalOption
-} from '@components'
+} from 'components'
 
 export default function Yeet() {
   return (

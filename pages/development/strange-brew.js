@@ -1,9 +1,9 @@
-import { Theme } from '@utils'
+import { Theme } from 'utils'
 import {
   Entry,
   EntryContainer,
   TerminalText
-} from '@components'
+} from 'components'
 
 export default function StrangeBrew() {
   return (

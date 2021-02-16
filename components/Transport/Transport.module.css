@@ -27,11 +27,13 @@
 .stat {
   @media (--sm) {
     margin-right: 1ch;
+  }
+}
 
-    &:not(:last-child)::after {
-      content: ' / ';
-      opacity: 0.2;
-    }
+.stat:not(:last-child)::after {
+  @media (--sm) {
+    content: ' / ';
+    opacity: 0.2;
   }
 }
 

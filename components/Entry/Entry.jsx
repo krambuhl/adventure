@@ -1,6 +1,6 @@
 import classnames from 'classnames'
-import { Animation, Rhythm } from  '@utils'
-import { TerminalSelect, TerminalText } from  '@components'
+import { Animation, Rhythm } from 'components/utils'
+import { TerminalSelect, TerminalText } from 'components'
 import css from './Entry.module.css'
 
 export default function Entry({

@@ -1,6 +1,6 @@
-import { Grid, Transport, VisualContainer } from '@components'
-import { useTransportContext, withTransportProvider } from '@contexts'
-import { outdoorPaint as color } from '@data/colorMaps'
+import { Grid, Transport, VisualContainer } from 'components'
+import { useTransportContext, withTransportProvider } from 'contexts'
+import { outdoorPaint as color } from 'data/colorMaps'
 
 export default withTransportProvider(Output)
 export const meta = {

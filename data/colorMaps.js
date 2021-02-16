@@ -38,3 +38,13 @@ export const secrets = {
   ShrimpPastel: '#d59681',
 }
 
+export const rainbow = [
+  outdoorPaint.Lavender,
+  outdoorPaint.Viola,
+  outdoorPaint.BloodOrange,
+  outdoorPaint.Orangina,
+  outdoorPaint.YellowCab,
+  outdoorPaint.LawnGreen,
+  outdoorPaint.Malachite,
+  outdoorPaint.SkyBlue,
+]

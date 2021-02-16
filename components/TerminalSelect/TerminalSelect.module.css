@@ -20,12 +20,12 @@
   margin-left: var(--space-tab);
   margin-right: var(--space-tab);
   margin-top: 1ex;
+}
 
-  & > * {
-    font-size: 0.7em;
-    text-transform: uppercase;
-    color: var(--color-mid);
-  }
+.groupLabel > * {
+  font-size: 0.7em;
+  text-transform: uppercase;
+  color: var(--color-mid);
 }
 
 .option {

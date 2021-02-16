@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import classnames from 'classnames'
-import { Rhythm } from '@utils'
+import { Rhythm } from 'utils'
 import css from './TerminalText.module.css'
 
 export default function TerminalText({

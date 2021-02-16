@@ -1,14 +1,13 @@
-import { Grid, Transport, VisualContainer } from '@components'
-import { useTransportContext, withTransportProvider } from '@contexts'
-import { outdoorPaint as color } from '@data/colorMaps'
+import { Grid, Transport, VisualContainer } from 'components'
+import { useTransportContext, withTransportProvider } from 'contexts'
+import { outdoorPaint as color } from 'data/colorMaps'
 
 export default withTransportProvider(Output)
 export const meta = {
   date: '2021-01-22'
 }
 
-
-const sizex = 52
+const sizex = 40
 const sizey = 7
 
 const colors = [
@@ -22,10 +21,6 @@ const colors = [
   color.BloodOrange,
 ]
 
-// const steps = fibonacci(12)
-// const steps = [52, 52, 52, 52, 40, 32, 32, 24, 24, 16, 16, 8, 8]
-// const steps = [52, 48, 48, 40, 40, 32, 32, 24, 24, 16, 16, 8, 8]
-const steps = Array(7).fill(38)
 const offsets = [
   3 * 16,
   3 * 21 + 1,
@@ -33,7 +28,7 @@ const offsets = [
   3 * 6,
   3 * 4 + 2,
   3 * 11 + 2,
-  3 * 18
+  3 * 18 + 1
 ]
 const reversed = [false, false, false, false, true, true, true]
 
@@ -45,7 +40,7 @@ function Output () {
       <Grid
         rows={sizey}
         columns={sizex}
-        cellSize={[`16px`, `60px`]}
+        cellSize={[`20px`, `60px`]}
         mobileCellSize={[`48px`, `12px`]}
         getCellStyle={({ x, y }) => {
           const offset = 5.394

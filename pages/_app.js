@@ -2,8 +2,8 @@ import React from 'react'
 import Head from 'next/head'
 import Router from 'next/router'
 import withGA from 'next-ga'
-import { PageLayout } from '@components'
-import '@styles/styles.css'
+import { PageLayout } from 'components'
+import 'styles/styles.css'
 
 function CustomApp({ Component, pageProps }) {
   return (

@@ -1,5 +1,5 @@
 import classnames from 'classnames'
-import { GlobalFooter, GlobalHeader } from '@components'
+import { GlobalFooter, GlobalHeader } from 'components'
 import css from './PageLayout.module.css'
 
 export default function PageLayout({

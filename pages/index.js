@@ -3,7 +3,7 @@ import {
   EntryContainer,
   TerminalSelect,
   TerminalOption
-} from '@components'
+} from 'components'
 
 export default function Index() {
   return (
