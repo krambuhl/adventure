@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Theme } from 'components/utils'
+import { Theme } from 'styles/utils'
 import {
   Entry,
   EntryContainer,

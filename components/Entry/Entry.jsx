@@ -1,5 +1,5 @@
 import classnames from 'classnames'
-import { Animation, Rhythm } from 'components/utils'
+import { Animation, Rhythm } from 'styles/utils'
 import { TerminalSelect, TerminalText } from 'components'
 import css from './Entry.module.css'
 

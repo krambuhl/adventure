@@ -2,7 +2,7 @@ import {
   EntryContainer,
   Text
 } from 'components'
-import { Animation } from 'components/utils'
+import { Animation } from 'styles/utils'
 
 export default function NotFoundPage() {
   return (
