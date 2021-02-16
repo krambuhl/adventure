@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from 'react'
+import React from 'react'
+import { useState, useRef } from 'react'
 import classnames from 'classnames'
 import Link from 'next/link'
 import { Text } from 'components'
@@ -10,6 +11,8 @@ export function TerminalOption({
   value,
   isActive,
   isLoading,
+  isActiveCursor,
+  isExpanded,
   handleActivate,
   handleCursor,
   children,
@@ -17,7 +20,7 @@ export function TerminalOption({
   ...props
 }) {
   const classList = classnames(css.option, {
-    [css.isActive]: isActive,
+    [css.isActive]: isActiveCursor,
     [css.isLoading]: isLoading
   }, className)
 

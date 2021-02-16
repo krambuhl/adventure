@@ -1,4 +1,3 @@
-import React, { useCallback } from 'react'
 import { Sketch, Transport, VisualContainer } from 'components'
 import { withTransportProvider } from 'contexts'
 import { rainbow as colors } from 'data/colorMaps'

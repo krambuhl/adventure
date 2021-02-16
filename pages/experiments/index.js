@@ -1,3 +1,4 @@
+import React from 'react'
 import glob from 'fast-glob'
 import path from 'path'
 import fs from 'fs'
@@ -34,7 +35,7 @@ export default function VisualExperiments({ projects, projectsByMonth }) {
           {
             Object.keys(projectsByMonth).map(key => {
               return (
-                <>
+                <React.Fragment key={key}>
                   <TerminalLabel>{key}</TerminalLabel>
 
                   <>{
@@ -53,7 +54,7 @@ export default function VisualExperiments({ projects, projectsByMonth }) {
                       </TerminalOption>
                     ))
                   }</>
-                </>
+                </React.Fragment>
               )
             })
           }

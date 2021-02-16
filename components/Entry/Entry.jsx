@@ -1,3 +1,4 @@
+import React from 'react'
 import classnames from 'classnames'
 import { Animation, Rhythm } from 'styles/utils'
 import { TerminalSelect, TerminalText } from 'components'
