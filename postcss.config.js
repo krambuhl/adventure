@@ -8,7 +8,7 @@ module.exports = {
         'styles'
       ]
     }],
-    'postcss-nested',
+    // 'postcss-nested',
     ['postcss-preset-env', {
       stage: 1,
       features: {

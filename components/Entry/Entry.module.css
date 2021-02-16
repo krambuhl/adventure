@@ -1,29 +1,27 @@
 .root { }
 .lead { }
 
-.symbol {
-  &::before {
-    font-family: 'Lucida Grande';
-  }
+.symbol::before {
+  font-family: 'Lucida Grande';
+}
 
-  .passive &::before {
-    display: block;
-    content: '■';
-    font-size: 2.4em;
-    line-height: 0.6em;
-    margin-left: -2px;
-    margin-bottom: 3px;
-  }
+.passive .symbol::before {
+  display: block;
+  content: '■';
+  font-size: 2.4em;
+  line-height: 0.6em;
+  margin-left: -2px;
+  margin-bottom: 3px;
+}
 
-  .action &::before {
-    display: block;
-    content: '●';
-    font-size: 2.4em;
-    line-height: 0.6em;
-    color: var(--color-action);
-    margin-left: -2px;
-    margin-bottom: 2px;
-  }
+.action .symbol::before {
+  display: block;
+  content: '●';
+  font-size: 2.4em;
+  line-height: 0.6em;
+  color: var(--color-action);
+  margin-left: -2px;
+  margin-bottom: 2px;
 }
 
 .caption {

@@ -37,29 +37,29 @@
   align-items: center;
   text-decoration: none;
   color: inherit;
+}
+
+.link::before {
+  content: '>';
+  color: var(--color-light);
+  display: inline-block;
+  margin-right: 1ch;
+  animation: blink 1.5s steps(3, start) infinite;
+  opacity: 0;
+}
+
+.link:hover,
+.link:focus {
+  color: var(--color-yellow);
+  outline: none;
 
   &::before {
-    content: '>';
-    color: var(--color-light);
-    display: inline-block;
-    margin-right: 1ch;
-    animation: blink 1.5s steps(3, start) infinite;
-    opacity: 0;
+    color: var(--color-yellow);
+    opacity: 1;
   }
 
-  &:hover,
-  &:focus {
-    color: var(--color-yellow);
-    outline: none;
-
-    &::before {
-      color: var(--color-yellow);
-      opacity: 1;
-    }
-
-    .text {
-      text-decoration: underline;
-    }
+  .text {
+    text-decoration: underline;
   }
 }
 
