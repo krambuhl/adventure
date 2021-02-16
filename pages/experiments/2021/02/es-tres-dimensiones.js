@@ -1,8 +1,8 @@
 import { useCallback } from 'react'
 import { Transport, VisualContainer } from 'components'
 import { withTransportProvider } from 'contexts'
-import { rainbow as colors } from 'data/colorMaps'
-import Sketch from 'react-p5'
+// import { rainbow as colors } from 'data/colorMaps'
+// import Sketch from 'react-p5'
 
 export default withTransportProvider(Output)
 export const meta = {
@@ -20,7 +20,7 @@ function Output () {
   return (
     <VisualContainer>
       <Transport autoplay={false}/>
-      <Sketch setup={setup} draw={draw} />
+      {/* <Sketch setup={setup} draw={draw} /> */}
     </VisualContainer>
   )
 }
