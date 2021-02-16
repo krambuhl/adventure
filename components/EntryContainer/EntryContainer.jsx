@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import classnames from 'classnames'
-import { Rhythm } from 'utils'
+import { Rhythm } from 'components/utils'
 import { Wrapper } from 'components'
 import { useFocus } from 'hooks'
 import css from './EntryContainer.module.css'

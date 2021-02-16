@@ -5,7 +5,7 @@ import djson from 'dirty-json'
 import { reverse, sortBy, groupBy } from 'lodash'
 import { DateTime } from 'luxon'
 import leftpad from 'leftpad'
-import { Theme } from 'utils'
+import { Theme } from 'components/utils'
 import {
   Entry,
   EntryContainer,

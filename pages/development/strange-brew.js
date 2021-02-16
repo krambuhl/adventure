@@ -1,4 +1,4 @@
-import { Theme } from 'utils'
+import { Theme } from 'components/utils'
 import {
   Entry,
   EntryContainer,
