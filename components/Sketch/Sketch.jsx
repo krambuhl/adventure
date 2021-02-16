@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic'
+import { Transport } from 'components'
 import { useTransportContext } from 'contexts'
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 
 const SketchWrapper = dynamic(() => import('react-p5-wrapper'), {
   ssr: false,
@@ -8,22 +9,31 @@ const SketchWrapper = dynamic(() => import('react-p5-wrapper'), {
 })
 
 export default function Sketch({
+  autoplay,
   setup,
   draw
 }) {
-  const { frame, frameSize } = useTransportContext()
+  const { frame, frameSize, setFrameSize } = useTransportContext()
+
+  const wrappedSetup = useCallback((p) => {
+    setup && setup(p)
+    autoplay && setFrameSize(1)
+  }, [setup, setFrameSize])
 
   const sketch = useCallback(
-    sketchWrapper({ setup, draw }),
+    sketchWrapper({ setup: wrappedSetup, draw }),
     [setup, draw]
   )
 
   return (
-    <SketchWrapper
-      sketch={sketch}
-      frame={frame}
-      frameSize={frameSize}
-    />
+    <>
+      <Transport autoplay={false} />
+      <SketchWrapper
+        sketch={sketch}
+        frame={frame}
+        frameSize={frameSize}
+      />
+    </>
   )
 }
 
@@ -32,7 +42,6 @@ const sketchWrapper = ({ setup, draw }) => (p) => {
   let frameSize = 1
 
   p.setup = () => {
-    p.createCanvas(600, 600)
     p.frameRate(60)
     setup && setup(p)
   }

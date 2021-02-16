@@ -46,7 +46,6 @@ export default function Transport({
   }
 
   const handleKeyboard = (ev) => {
-    console.log(ev.keyCode)
     if (ev.keyCode === 32) {
       setPlaying(!isPlaying)
     }
