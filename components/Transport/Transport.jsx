@@ -99,7 +99,6 @@ export default function Transport({
               ref={ref}
               type="range"
               list="speed-tickmarks"
-              defaultValue={allSpeeds.indexOf(1)}
               value={allSpeeds.indexOf(speed)}
               step={1}
               min={0}
