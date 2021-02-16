@@ -1,26 +1,24 @@
 .root { }
 .lead { }
 
-.symbol::before {
-  font-family: 'Lucida Grande';
+.symbol {
+  &::before {
+    display: block;
+    font-family: 'Lucida Grande';
+    font-size: 2.4em;
+    line-height: 0.6em;
+    margin-left: -2px;
+  }
 }
 
 .passive .symbol::before {
-  display: block;
   content: '■';
-  font-size: 2.4em;
-  line-height: 0.6em;
-  margin-left: -2px;
   margin-bottom: 3px;
 }
 
 .action .symbol::before {
-  display: block;
   content: '●';
-  font-size: 2.4em;
-  line-height: 0.6em;
   color: var(--color-action);
-  margin-left: -2px;
   margin-bottom: 2px;
 }
 

@@ -19,7 +19,7 @@ const colors = [
   color.SkyBlue,
 ]
 
-function FibonacciRainbow () {
+function Output () {
   const { frame } = useTransportContext()
 
   return (

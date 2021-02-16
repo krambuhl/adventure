@@ -1,7 +1,7 @@
 @import url(breakpoints.css);
 
 .root {
-  a {
+  & a {
     text-decoration: none;
 
     &:hover {
@@ -9,7 +9,7 @@
     }
   }
 
-  .wrapper {
+  & .wrapper {
     --padding: calc(var(--space-md) * 2) var(--space-md);
 
     text-align: center;

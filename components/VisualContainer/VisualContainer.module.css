@@ -13,7 +13,7 @@
   width: 100%;
   border-top: 2px solid var(--color-yellow);
 
-  .root > *:last-child {
+  & > *:last-child {
     flex-grow: 1;
     width: 100%;
     display: flex;

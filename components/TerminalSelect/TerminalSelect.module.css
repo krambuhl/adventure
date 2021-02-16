@@ -20,12 +20,12 @@
   margin-left: var(--space-tab);
   margin-right: var(--space-tab);
   margin-top: 1ex;
-}
 
-.groupLabel > * {
-  font-size: 0.7em;
-  text-transform: uppercase;
-  color: var(--color-mid);
+  & > * {
+    font-size: 0.7em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+  }
 }
 
 .option {
@@ -37,29 +37,29 @@
   align-items: center;
   text-decoration: none;
   color: inherit;
-}
-
-.link::before {
-  content: '>';
-  color: var(--color-light);
-  display: inline-block;
-  margin-right: 1ch;
-  animation: blink 1.5s steps(3, start) infinite;
-  opacity: 0;
-}
-
-.link:hover,
-.link:focus {
-  color: var(--color-yellow);
-  outline: none;
 
   &::before {
-    color: var(--color-yellow);
-    opacity: 1;
+    content: '>';
+    color: var(--color-light);
+    display: inline-block;
+    margin-right: 1ch;
+    animation: blink 1.5s steps(3, start) infinite;
+    opacity: 0;
   }
 
-  .text {
-    text-decoration: underline;
+  &:hover,
+  &:focus {
+    color: var(--color-yellow);
+    outline: none;
+
+    &::before {
+      color: var(--color-yellow);
+      opacity: 1;
+    }
+
+    .text {
+      text-decoration: underline;
+    }
   }
 }
 

@@ -27,13 +27,11 @@
 .stat {
   @media (--sm) {
     margin-right: 1ch;
-  }
-}
 
-.stat:not(:last-child)::after {
-  @media (--sm) {
-    content: ' / ';
-    opacity: 0.2;
+    &:not(:last-child)::after {
+      content: ' / ';
+      opacity: 0.2;
+    }
   }
 }
 
@@ -203,7 +201,7 @@
   font-weight: var(--weight-bold);
   cursor: pointer;
 
-  svg {
+  & svg {
     display: block;
     width: 2em;
     height: 2em;
