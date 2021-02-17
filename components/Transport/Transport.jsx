@@ -6,7 +6,7 @@ import { TransportContext } from 'contexts'
 import css from './Transport.module.css'
 
 const speeds = [
-  0.00001, 0.0001, 0.001, 0.01, 0.25, 0.5,
+  0.00001, 0.0001, 0.001, 0.01, 0.1, 0.25, 0.5,
   1, 2, 4, 8, 16, 32, 64, 128
 ]
 
