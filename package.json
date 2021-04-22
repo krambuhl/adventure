@@ -19,6 +19,7 @@
     "ms-to-timecode": "^0.1.2",
     "next": "^10.0.7",
     "next-ga": "^2.3.4",
+    "periodic-function": "^1.1.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0",

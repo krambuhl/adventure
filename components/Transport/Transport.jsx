@@ -18,6 +18,7 @@ const allSpeeds = [
 export default function Transport({
   autoplay = true,
   initialSpeed = 1,
+  initialFrame = 0,
   className,
   ...props
 }) {
@@ -66,6 +67,10 @@ export default function Transport({
       ev.stopPropagation()
     }
   }
+
+  useEffect(() => {
+    setFrame(initialFrame)
+  }, [initialFrame])
 
   useEffect(() => {
     setFrameSize(isPlaying ? speed : 0)
