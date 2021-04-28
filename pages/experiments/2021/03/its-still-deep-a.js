@@ -5,14 +5,14 @@ import { rainbow as colors } from 'data/colorMaps'
 
 export default withTransportProvider(Output)
 export const meta = {
-  date: '2021-03-23'
+  date: '2021-04-27'
 }
 
-const [width, height] = [600, 600]
-const [stepX, stepY] = [1, 1]
+const [width, height] = [560, 560]
+const [stepX, stepY] = [4, 4]
 const [sizeX, sizeY] = [
-  width / stepX,
-  height / stepY
+  width / stepX * 1,
+  height / stepY * 1
 ]
 
 let shader
@@ -33,7 +33,7 @@ function Output () {
           const slowFrame = absFrame * 0.001
 
           p.normalMaterial()
-          // p.specularMaterial(250)
+          p.specularMaterial(250)
           p.shader(shader)
           shader.setUniform("uFrameCount", frame);
 
@@ -54,15 +54,18 @@ function Output () {
               )
 
               p.rotateX(
-                (slowFrame * Math.atan(sizeX / (xAbs + 1) / (yAbs + 1)) * 1)
+                (slowFrame * Math.atan(sizeX / (xAbs + 1) / (yAbs + 1)) * 1) 
+                // * (xAbs % 2 ? 1 : -1)
               )
 
               p.rotateY(
                 (slowFrame * Math.atan(sizeY / (yAbs + 1) / (xAbs + 1)) * 10)
+                // * (yAbs % 2 ? 1 : -1)
               )
 
               p.rotateZ(
-                (slowFrame * Math.atan(sizeY / (yAbs + 1) / (xAbs + 1)) * 0.2)
+                (slowFrame * Math.atan(sizeY / (yAbs + 1) / (xAbs + 1)) * 0.2) 
+                * ((yAbs * yAbs) % 2 > 1 ? 1 : -1)
               )
 
               // p.rotateY(frame / 1000 * Math.sin((x + 1) * (frame / 100)))
@@ -70,7 +73,7 @@ function Output () {
               // p.rotateX(frame / 1000 * Math.cos((y + 1) * (x + 1) * (frame / 1000)))
 
               // p.box(sizeX * 0.5, sizeY * 0.5, sizeY * 0.5, 10, 10)
-              p.sphere(sizeX * 0.4)
+              p.sphere(sizeX * 0.8, 100, 100)
               p.pop()
             }
           }
@@ -143,7 +146,7 @@ const vs = `
     gl_Position = uProjectionMatrix * uModelViewMatrix * positionVec4;
 
     // Send the texture coordinates to the fragment shader
-    vTexCoord =   ;
+    vTexCoord = aTexCoord;
   }
 `
 
