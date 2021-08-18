@@ -5,7 +5,6 @@ import css from './PageLayout.module.css'
 export default function PageLayout({
   pageProps,
   Component,
-  fullScreen,
   children,
   className,
   ...props

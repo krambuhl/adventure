@@ -5,7 +5,7 @@ import { rainbow as colors } from 'data/colorMaps'
 
 export default withTransportProvider(Output)
 export const meta = {
-  date: '2021-04-27'
+  date: '2021-04-27T21:00:00.000Z'
 }
 
 const [width, height] = [560, 560]

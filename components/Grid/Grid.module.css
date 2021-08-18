@@ -2,18 +2,21 @@
 
 .root {
   display: block;
+
+  @media (--sm) {
+    padding: 0 var(--space-sm) var(--space-sm) var(--space-sm);
+  }
 }
 
 .grid {
   display: flex;
-  flex-flow: column wrap;
+  width: 100%;
+  max-height: calc(100vh - 60px - 80px - var(--space-md));
+  flex-flow: column nowrap;
   align-content: center;
   padding: var(--space-md);
   background-color: var(--color-dark);
-
-  @media (--sm) {
-    border: 2px solid var(--color-darker);
-  }
+  overflow: auto;
 }
 
 .row {
@@ -26,17 +29,30 @@
   background-color: transparent;
   color: black;
   margin: 0px 0px;
+  width: 100vw;
+  height: 100vh;
+  max-height: var(--height);
+  max-width: var(--width);
+  flex-basis: var(--width);
+  flex-grow: 0;
+  flex-shrink: 10;
 }
 
-@media (--lt-md) {
+@media (--lt-lg) {
   .grid {
-    flex-flow: row-reverse wrap;
+    flex-flow: row nowrap;
+    justify-content: center;
   }
 
   .row {
-    flex-flow: column-reverse wrap;
-    margin-top: 0;
-    margin-left: 0px;
-    width: auto
+    flex-flow: column nowrap;
+    width: auto;
+    flex-shrink: 1;
+  }
+  
+  .cell {
+    max-height: var(--mobile-height);
+    max-width: var(--mobile-width);
+    flex-basis: var(--mobile-width);
   }
 }
