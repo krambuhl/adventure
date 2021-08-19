@@ -1,0 +1,31 @@
+@import url(breakpoints.css);
+
+.root {
+  display: block;
+
+  @media (--sm) {
+    padding: 0 var(--space-sm) var(--space-sm) var(--space-sm);
+  }
+}
+
+.grid {
+  position: relative;
+  background-color: var(--color-darker);
+  border-radius: 100%;
+  overflow: hidden;
+  perspective: var(--radius);
+  width: 100%;
+  max-width: calc(var(--radius) * 2);
+}
+
+.gridSizer {
+  padding-top: 100%;
+}
+
+.cell {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: calc(50% - 6px);
+  left: calc(50% - 6px);
+}
