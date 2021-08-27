@@ -47,8 +47,6 @@ const sketchWrapper = ({ setup, draw }) => (p) => {
   }
 
   p.draw = () => {
-    p.background(0)
-    p.stroke(255)
     draw && draw(p, { frame, frameSize })
   }
 

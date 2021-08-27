@@ -4,7 +4,7 @@ import { outdoorPaint as color } from 'data/colorMaps'
 
 export default withTransportProvider(Output)
 export const meta = {
-  date: '2021-08-18T22:00:00.000Z'
+  date: '2021-08-18T21:00:00.000Z'
 }
 
 const colors = [
