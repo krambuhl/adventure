@@ -22,7 +22,7 @@ const colors = [
 const radius = 310
 const sizex = radius * 2
 const sizey = radius * 2
-const count = 500    
+const count = 500
 
 function Output () {
   return (
