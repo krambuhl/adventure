@@ -105,7 +105,7 @@ function manipulate(backContext, context, w, h, frame) {
 }
 
 function Output() {
-  const [width, height] = [600, 600]
+  const [width, height] = [800, 450]
   
   const [count, setCount] = useState(3)
   const [frame, setFrame] = useState(0)
