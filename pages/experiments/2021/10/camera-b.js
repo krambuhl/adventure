@@ -6,8 +6,8 @@ import { rainbow as colors } from "data/colorMaps"
 
 export default withTransportProvider(Output)
 export const meta = {
-  title: 'Midnight Vision A',
-  date: "2021-10-06T24:00:00.000Z",
+  title: 'Midnight Vision B',
+  date: "2021-10-06T23:00:00.000Z",
 }
 
 function useCamera() {
@@ -72,7 +72,7 @@ function manipulate(backContext, context, w, h, frame) {
   const oldImageData = backContext.getImageData(0, 0, w, h)
   const imageData = new ImageData(w, h)
 
-  const size = imageData.data.length / 4
+  const size = imageData.data.length
   for (let i = 0; i < imageData.data.length; i += 4) {
     let x = (i / 4 % w) / w;
     let y = Math.ceil(i / 4 / h) / h;
@@ -86,17 +86,18 @@ function manipulate(backContext, context, w, h, frame) {
     // moves
     const pos = i
     let [r, g, b, a] = [
-      0 + Math.floor((frame * 51 % 1000) * x) * 4, 
-      1 + Math.floor((frame * 33 % 1000) * x) * 4, 
-      2 + Math.floor((frame * 29 % 1000) * x) * 4, 
+      0 + Math.floor((Math.sin(frame * 29.3 / 900) * 40) * ((x * 1) + ((h - y) / 8))) * 4, 
+      1 + Math.floor((Math.cos(frame * 29.1 / 1500) * 50) * ((x / 2) + ((h - y) / 10))) * 4, 
+      2 + Math.floor((Math.cos(frame * 29.2 / 5000) * 30) * ((x * 3) + ((h - y) / 9))) * 4, 
       3
     ]
+    const swipe = frame * 4 * 10 % size
 
     // Modify pixel data
-    imageData.data[i + (frame * 4 * 10) + 0] = oldImageData.data[pos + r]
-    imageData.data[i + (frame * 4 * 10) + 1] = oldImageData.data[pos + g]
-    imageData.data[i + (frame * 4 * 10) + 2] = oldImageData.data[pos + b]
-    imageData.data[i + (frame * 4 * 10) + 3] = oldImageData.data[pos + a]
+    imageData.data[i + swipe + 0] = oldImageData.data[(pos + r) % size]
+    imageData.data[i + swipe + 1] = oldImageData.data[(pos + g) % size]
+    imageData.data[i + swipe + 2] = oldImageData.data[(pos + b) % size]
+    imageData.data[i + swipe + 3] = oldImageData.data[(pos + a) % size]
   }
 
   // Draw the pixels onto the visible canvas
@@ -104,7 +105,7 @@ function manipulate(backContext, context, w, h, frame) {
 }
 
 function Output() {
-  const [width, height] = [800, 450]
+  const [width, height] = [600, 600]
   
   const [count, setCount] = useState(3)
   const [frame, setFrame] = useState(0)
